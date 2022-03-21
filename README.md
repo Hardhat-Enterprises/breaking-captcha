@@ -12,7 +12,7 @@ Deliverables:
 - (Long Term) - a software that interacts with browsers to detect a CAPTCHA and and crack it.
 
 ## Team Structure
-**Data Engineering/Data Scrapping:**
+**Data Engineering/Data Scrappings:**
 Lead: Hugh Wan (wanjunyuan@deakin.edu.au)
 - Github Responsibilities (maintaining, approving merge requests, etc.)
 - Data Responsibilities (obtaining, integrity, maintaining)
