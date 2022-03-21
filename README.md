@@ -13,7 +13,7 @@ Deliverables:
 
 ## Team Structure
 **Data Engineering/Data Scrapping:**
-Lead: TBD
+Lead: Hugh Wan (wanjunyuan@deakin.edu.au)
 - Github Responsibilities (maintaining, approving merge requests, etc.)
 - Data Responsibilities (obtaining, integrity, maintaining)
 - Data Pipeline
@@ -39,7 +39,8 @@ I have compiled some of the findings based on all the post from MS Teams and can
 - [Learning resource about Python, ML & AL by Angus](https://deakin365.sharepoint.com/sites/DeakinSITCapstone/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FDeakinSITCapstone%2FShared%20Documents%2FDS%20and%20AI%20Community%2FResources%2FCheat%2Dsheets&p=true)
 
 ### Data Description
-Data for this project will be uploaded to this Git repository soon.
+- [CAPTCHA breaking with Deep Learning](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi9-Jby1db2AhVU7HMBHamQCb0QFnoECAUQAQ&url=http%3A%2F%2Fcs229.stanford.edu%2Fproj2017%2Ffinal-reports%2F5239112.pdf&usg=AOvVaw1COvEZdWx9HChGeN4bhUJh): This research paper mention that the have used *PyCaptcha*, which is a python package for CAPTCHA generation, to make custom CAPTCHA image dataset. It offers several degree of freedom such as font style, distortion and noise, so that people can exploit increase the diversity of the data and the difficulty of the recognition task.
+
 
 ### GitHub Admin
 You can contact me if you have any questions regarding this repository:
