@@ -13,6 +13,7 @@ Deliverables:
 
 ## Team Structure
 **Data Engineering/Data Scrappings:**
+
 Lead: Hugh Wan (wanjunyuan@deakin.edu.au)
 - Github Responsibilities (maintaining, approving merge requests, etc.)
 - Data Responsibilities (obtaining, integrity, maintaining)
@@ -20,12 +21,14 @@ Lead: Hugh Wan (wanjunyuan@deakin.edu.au)
 - Real time website scraping
 
 **Project Team A (Image based CAPTCHA)**
+
 Lead: Cecilia Sammut (ccsammut@deakin.edu.au)
 - Research (both CAPTCHA and Model research)
 - Model development
 - Model Reviews
 
 **Project Team B (Text based CAPTCHA)**
+
 Lead: William Tan Yoon Lok (tanyoonlok@deakin.edu.au)
 - Research (both CAPTCHA and Model research)
 - Model development
