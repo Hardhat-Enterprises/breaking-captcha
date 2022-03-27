@@ -48,7 +48,7 @@ I have compiled some of the findings based on all the post from MS Teams and can
 ### GitHub Admin
 You can contact me if you have any questions regarding this repository:
 - Hugh (wanjunyuan@deakin.edu.au)
-- Rayvinder (rayv@deakin.edu.au)
+- Rayvinder Athwal (rayv@deakin.edu.au)
 
 This documentation will be updated constantly so keep an eye out!
 
