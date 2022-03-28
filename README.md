@@ -62,6 +62,6 @@ You can contact me if you have any questions regarding this repository:
 - Hugh (wanjunyuan@deakin.edu.au)
 - Rayvinder Athwal (rayv@deakin.edu.au)
 
-This documentation will be updated constantly so keep an eye out!
+This documentation will be updated constantly so keep an eye out!!
 
 Last edited: 21/03/2022 6:36PM
