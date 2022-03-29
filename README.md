@@ -66,3 +66,6 @@ Simply run
 export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 python3 run.py
 ```
+
+### Additional data:
+- [The CIFAR-10 dataset](https://www.cs.toronto.edu/~kriz/cifar.html): It consist of 60000 32x32 colour images in 10 classes, with 6000 image per class. There are 50000 training images and 10000 test images.
