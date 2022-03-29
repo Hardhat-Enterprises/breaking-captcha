@@ -69,3 +69,11 @@ python3 run.py
 
 ### Additional data:
 - [The CIFAR-10 dataset](https://www.cs.toronto.edu/~kriz/cifar.html): It consist of 60000 32x32 colour images in 10 classes, with 6000 image per class. There are 50000 training images and 10000 test images.
+- [reCAPTCHA dataset](https://github.com/brian-the-dev/recaptcha-dataset): It contains thousands of image dataset
+- [Various images from COCO](https://cocodataset.org/#download)
+- [Image recognition using Tensorflow](https://github.com/alielabridi/Image-recognition-reCaptcha-TensorFlow): Image recognition using Machine Learning, Tensorflow and Google Inception Neural Networks to fool the Recaptcha System for Recognition of Bots. Demonstration
+
+### Relevant research paper
+- [An Object Detection based Solver for Google’s Image reCAPTCHA v2
+](https://www.usenix.org/system/files/raid20-hossen.pdf)
+
