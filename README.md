@@ -31,7 +31,7 @@ Lead: Cecilia Sammut (ccsammut@deakin.edu.au)
 
 Lead: William Tan Yoon Lok (tanyoonlok@deakin.edu.au)
 - Research (both CAPTCHA and Model research)
-- Model development
+- Model developmentsss
 - Model Review
 
 ## Resource
