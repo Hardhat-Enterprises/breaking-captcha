@@ -1,5 +1,5 @@
 # NotARobot - Automating reCAPTCHAs with Tensorflow
-###### Emil Tu
+######
 This project leverages the Tensorflow Object Detection API to automatically solve Google reCAPTCHAs.
 
 The procedure is as follows:
