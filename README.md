@@ -67,6 +67,10 @@ export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 python3 run.py
 ```
 
+### Improving your model:
+There are a number of ways for you to improve your model. It can come in the form of adjusting the learning rate of your model, adding regularization features such as batch normalization or dropout and even activation functions. In addition, your model can be tested against newly generated data via data augmentation. Data Augmentation can be utilizied via Keras's ImageDataGenerator library. Examples of these techniques can be viewed through this link: https://www.tensorflow.org/tutorials/images/data_augmentation. 
+
+
 ### Additional data:
 - [The CIFAR-10 dataset](https://www.cs.toronto.edu/~kriz/cifar.html): It consist of 60000 32x32 colour images in 10 classes, with 6000 image per class. There are 50000 training images and 10000 test images.
 - [reCAPTCHA dataset](https://github.com/brian-the-dev/recaptcha-dataset): It contains thousands of image dataset
