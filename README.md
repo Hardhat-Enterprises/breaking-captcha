@@ -8,5 +8,8 @@ Using AI/ML/DP to break CAPTCHA prompt
 - [Using deep learning to automatically break CAPTCHAs](https://github.com/tharidu/breakingcaptcha/blob/master/report/CAPTCHA-report.md)
 - [Captcha Images](https://www.kaggle.com/datasets/aadhavvignesh/captcha-images): Captcha Images with different styles, fonts, colors
 
+## Improving your model:
+There are a number of ways for you to improve your model. It can come in the form of adjusting the learning rate of your model, adding regularization features such as batch normalization or dropout and even activation functions. In addition, your model can be tested against newly generated data via data augmentation. Data Augmentation can be utilizied via Keras's ImageDataGenerator library. Examples of these techniques can be viewed through this link: https://www.tensorflow.org/tutorials/images/data_augmentation.
+
 ## Relevant paper
 - [CAPTCHA Recognition Using Deep Learning with Attached Binary Images](https://www.mdpi.com/2079-9292/9/9/1522/htm#sec3dot2-electronics-09-01522): 
