@@ -22,7 +22,7 @@ We are experimenting with methods that will allow us to perform segmentation and
 
 We are entering this somewhat theoretical field of non-segmentation recognition
 
-### Post-Segmentaiton
+### Post-Segmentation
 
 This step is contingent on the outcomes of the steps above. It is necessary only if we need to feed data through for recognition.
 
