@@ -28,7 +28,7 @@ This step is contingent on the outcomes of the steps above. It is necessary only
 
 ### Recognition
 
-We will experiment with different parameters to achieve optimal results for a SVM classifier. We will also experiemnent with other types of classification models to see if we can make some improvements on this step of the pipeline.
+We will experiment with different parameters to achieve optimal results for a SVM classifier. We will also experiment with other types of classification models to see if we can make some improvements on this step of the pipeline.
 
 ### Post-processing
 
