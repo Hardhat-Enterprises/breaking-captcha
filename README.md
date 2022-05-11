@@ -4,7 +4,7 @@ By attempting to re-work the various stages of the Decaptcha model developed by 
 
 ## How are we doing it?
 
-We have isolated each step fo teh Decaptcha pipeline and are trialing various methods to build our own pipeline that we aim to have improved performance when breaking text CAPTCHAs.
+We have isolated each step fo the Decaptcha pipeline and are trialling various methods to build our own pipeline that we aim to have improved performance when breaking text CAPTCHAs.
 
 ### Preprocessing
 
@@ -16,11 +16,11 @@ Wea re trialling two different methods:
 
 ##### 1. Segmentation and recognition 
 
-We are experiementing with methods that will allow us to perform segmentaiton and recognition simultaneously.
+We are experimenting with methods that will allow us to perform segmentation and recognition simultaneously.
 
 ##### 2. Non-Segmentation
 
-We are entering this somewhat theoretical field of non-segmentation recognititon
+We are entering this somewhat theoretical field of non-segmentation recognition
 
 ### Post-Segmentaiton
 
@@ -28,7 +28,7 @@ This step is contingent on the outcomes of the steps above. It is necessary only
 
 ### Recognition
 
-We will experiment with differnt parameters to achieve optimal results for a SVM clasffier. We will also experiemnent with other types of classification models to see if we can make some improvements on this step of the pipeline.
+We will experiment with different parameters to achieve optimal results for a SVM classifier. We will also experiemnent with other types of classification models to see if we can make some improvements on this step of the pipeline.
 
 ### Post-processing
 
