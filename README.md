@@ -3,7 +3,7 @@
 Project lead: Andrew Hallam (ahallam@deakin.edu.au)
 
 ## Project Description
-This project is about using a combination of Artificial Intelligence(AI), Machine Learning(ML), and Deep Learning(DL) technique to create algorithms that crack different CAPTCHA system
+This project is about using a combination of Artificial Intelligence (AI), Machine Learning (ML), and Deep Learning (DL) technique to create algorithms that crack different CAPTCHA system
 
 Deliverables:
 - AI/ML Models that can crack CAPTCHAs of different forms
