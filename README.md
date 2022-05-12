@@ -22,14 +22,14 @@ Lead: Hugh Wan (wanjunyuan@deakin.edu.au)
 
 **Project Team A (Image based CAPTCHA)**
 
-Lead: Cecilia Sammut (ccsammut@deakin.edu.au)
+Lead: William Tan Yoon Lok (tanyoonlok@deakin.edu.au)
 - Research (both CAPTCHA and Model research)
 - Model development
 - Model Reviews
 
 **Project Team B (Text based CAPTCHA)**
 
-Lead: William Tan Yoon Lok (tanyoonlok@deakin.edu.au)
+Lead: Cecilia Sammut (ccsammut@deakin.edu.au)
 - Research (both CAPTCHA and Model research)
 - Model developmentsss
 - Model Review
