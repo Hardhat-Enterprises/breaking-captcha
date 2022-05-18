@@ -1,0 +1,18 @@
+# Documented Peer Review
+
+By Hugh Wan
+
+**Note that this document are only reviewing files that were included in the repository as of the time of this document were written.**
+
+This document intend to review and comment on all of the codes and models that were commited/pushed to the GitHub repository. On top of that, I will also include some explanation on a certain models and the working logic behind it. The next part will divide into two section, which are for the text-captcha branch and the image-captcha branch, and subsequently the author and then the files. For example:
+
+- BranchName
+	- Author
+		- Files
+		
+
+## Text Captcha Branch
+
+
+
+## Image Captcha Branch
