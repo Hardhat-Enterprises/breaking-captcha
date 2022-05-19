@@ -1,6 +1,6 @@
 # Documented Peer Review
 
-By Hugh Wan
+By Hugh Wan, Rayvinder, & Felipe
 
 **Note that this document are only reviewing files that were included in the repository as of the time of this document were written.**
 
