@@ -26,23 +26,28 @@ The code has a good documentation where every line of code has an explanation on
 
 
 ## <u>Image Captcha Branch</u>
+
 ### 1. Felipe Molinari Ortiz
 
-#### reCAPTCHA _scraped_data 
-## The scraped data is well organized and the recaptcha_scraper.js file is clearly explained with prompts. However, the scraping_handler.py file could have prompts in it as well similar to the recaptcha_scraper.js file. A link is provided to the scraped data images from json->images->link to scraped images
+#### <u>reCAPTCHA _scraped_data </u>
+
+The scraped data is well organized and the recaptcha_scraper.js file is clearly explained with prompts. However, the scraping_handler.py file could have prompts in it as well similar to the recaptcha_scraper.js file. A link is provided to the scraped data images from json->images->link to scraped images
 
 ### 2. Gerald Araullo
 
-#### Basic_CNN_Model_Gerard.ipynb
-## The Basic CNN model file provides clear prompts and explanation for the various steps in the coding process. However, it could have also stated an short explanation of the model results. 
+#### <u>Basic_CNN_Model_Gerard.ipynb</u>
+
+The Basic CNN model file provides clear prompts and explanation for the various steps in the coding process. However, it could have also stated an short explanation of the model results. 
 
 ### 3. Jack Lenigas
 
-#### Comparison Report - Jack Lenigas.pdf
-## A report on the comparison between Image Classification and CAPTCHA classification models for development purposes. 
+#### <u>Comparison Report - Jack Lenigas.pdf</u>
 
-#### FasterRCNN+InceptionResnetv2.ipynb
-## Object and Image detection code that was clearly explained with in the in-code prompts. 
+A report on the comparison between Image Classification and CAPTCHA classification models for development purposes. 
+
+#### <u>FasterRCNN+InceptionResnetv2.ipynb</u>
+
+Object and Image detection code that was clearly explained with in the in-code prompts. 
 
 
 ### 4. Jack Lenigas
