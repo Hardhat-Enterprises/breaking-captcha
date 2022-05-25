@@ -21,7 +21,7 @@ The code has a good documentation where every line of code has an explanation on
 
 #### <u>AllDataCombiningCNN.ipynb</u>
 
-
+This document has a good explanation in each cell of code to show what the author is doing. However, as mentioned earlier, I would suggest having a markdown after every cell to explain the outcome of the code and also evaluating the results whether if its good or bad, so that people that will be going through this notebook will be able to see what can be improve on and what do the original lacks in terms of computational power and knowledge gap. 
 
 
 
