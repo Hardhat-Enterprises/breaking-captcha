@@ -55,30 +55,32 @@ A report on the comparison between Image Classification and CAPTCHA classificati
 
 #### <u>FasterRCNN+InceptionResnetv2.ipynb</u>
 
-Object and Image detection code that was clearly explained with in the in-code prompts. 
+Object and Image detection code that was clearly explained in the in-code prompts. 
 
 
-### 4. Jack Lenigas
+### 4. Rayvinder Singh
 
-#### 
-## 
+#### <u>BaseNeuralNetwork_Ray.ipynb<u>
+A baseline neural network that experiments with various techniques that enhances and optimizes the model and it was clearly explained in the in-code prompts.
 
-### 5. Jack Lenigas
+#### <u>CNN_Ray.ipynb<u>
+A baseline convolutional neural network that experiments with various techniques that enhances and optimizes the model and it was clearly explained in the in-code prompts.
 
-#### 
-## 
+#### <u>CNNv2_Ray.ipynb<u>
+A complex convolutional neural network developed for image classification and it was clearly explained in the in-code prompts. However, more detailed could have been added discussing the results and model performance. 
 
-### 6. Jack Lenigas
+### 5. Tyler Quinlivan
 
-#### 
-## 
+#### <u>DataLoadingOptions_Tyler.ipynb<u>
+The code started with clear in-code prompts but it did not continue. More detail could have been added explaining the plots and why they have been produced. 
 
+### 6. William Tan
 
+#### <u>CIFAR10_William.ipynb<u>
+Very clear explanation of the model with each and every step explained clearly. 
 
-
-
-
-
+#### <u>CIFAR10_William2.ipynb<u>
+Very clear explanation of the model with clear explanations 
 
 
 
