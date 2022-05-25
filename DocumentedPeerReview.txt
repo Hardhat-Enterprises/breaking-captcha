@@ -31,7 +31,41 @@ It has a good documentation in every cell of code to explain the steps taken. Ho
 
 #### <u>TextCAPTCHA_Pipeline_Felipe_0_3.ipynb</u>
 
+This document has a good documentation in every cell of code. However, it cuts off at the end without any explanation.
 
+### 3. Josh_Theodore
+
+#### <u>Segmentation.ipynb</u>
+
+This document has a good documentation in every cell of code but it lacks explanation of what the desire output of the author.
+
+### 4. Rayvinder Singh
+
+#### <u>20220517_NN_Ray.ipynb</u>
+
+This document has a good documentation in every cell of code.
+
+### 5. Renee Farina
+
+#### <u>EdgeDetection_Renee_thresholding.ipynb</u>
+
+This document has a good documentation in every cell of code but it lacks explanation of what the desire output of the author.
+
+#### <u>Preprocessing_Renee_segmentation.py</u>
+
+This document has a good documentation in every cell of code but it lacks explanation of what the desire output of the author. And it would be best to do it in Jupyter Notebook so that everyone can visual the output.
+
+### 6. Stefan Andjelkovic & Oliver McCann
+
+#### <u>DevelopingTraining_Stefan_Oliver.ipynb</u>
+
+This document has a good documentation in every cell of code but it lacks explanation of what the desire output of the author. Moreover, there is some missing cell in the file that we do not know why. 
+
+### 7. Youchan Shin
+
+#### <u>SVM-For-EMNIST-For-Digits and Numbers-Youchan-Shin.ipynb.ipynb</u>
+
+This document has a good documentation in every cell of code but it lacks explanation of what the desire output of the author. And I would suggest not splitting the EMNIST model into 3 different files since they all does the same thing and it will be easier to visualise all of the output in one single files. 
 
 ## <u>Image Captcha Branch</u>
 
