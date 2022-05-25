@@ -17,6 +17,9 @@ This document intend to review and comment on all of the codes and models that w
 
 #### <u>PreProcessing_Cecilia.py</u>
 
+The code has a good documentation where every line of code has an explanation on what the author is doing. However, the author did not specify what is their desire outcome and possible next step in the future. I would suggest having another line of comment to explain what do they expect in this particular code. Writing explanation in a script file would be difficult, thus, having it in a jupyter files would be better.
+
+#### <u>AllDataCombiningCNN.ipynb</u>
 
 
 
