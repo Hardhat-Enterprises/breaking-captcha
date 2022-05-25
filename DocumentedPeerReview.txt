@@ -27,6 +27,12 @@ This document has a good explanation in each cell of code to show what the autho
 
 It has a good documentation in every cell of code to explain the steps taken. However, in the first cell, I do not think it is neccessary to print our the directory of the download files, as it has taken a huge chunk of space in the notebook and people have to scroll all the way down to go to the next line of code. And I think most importantly, this directory contains all of the files of the author's personal computer. Thus, it is a privacy concern where it might show some sensitive files that the author has in their computer. 
 
+### 2. Felipe Molinari Ortiz
+
+#### <u>TextCAPTCHA_Pipeline_Felipe_0_3.ipynb</u>
+
+
+
 ## <u>Image Captcha Branch</u>
 
 ### 1. Felipe Molinari Ortiz
