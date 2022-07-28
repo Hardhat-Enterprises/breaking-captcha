@@ -1,58 +1,57 @@
 # Breaking CAPTCHA Project
+## Deakin University Capstone, Trimester 2, 2022
 
-Project lead: Andrew Hallam (ahallam@deakin.edu.au)
+Project lead: Cecilia Sammut (ccsammut@deakin.edu.au)
 
 ## Project Description
 
-This project is about using a combination of Artificial Intelligence (AI), Machine Learning (ML), and Deep Learning (DL) technique to create algorithms that crack different CAPTCHA system
+The goal of the Breaking CAPTCHA project is to develop machine learning, AI, and computer vision models to autonomously solve CAPTCHA problems. The final product of the project will be to provide end users with an interface to solve these CAPTCHA problems. This user interface will be the focus of future iterations.
 
 Deliverables:
 
-- AI/ML Models that can crack CAPTCHAs of different forms
-- Documentation showcasing the development of the model (documentation should also track discontinued models, so that they are not re-attempted)
-- Hand-over Documentation
-- (Long Term) - a software that interacts with browsers to detect a CAPTCHA and and crack it.
+-	Infrastructure as code product to enable efficient handover of cloud infrastructure.
+-	Machine learning model that will break Audio CAPTCHAs.
+-	Progressing the development of a nonsegmentation and OCR model that will break text CAPTCHAs.
+-	A coherent repository that will transcend trimesters.
+-	A showcase website where our products can be described and promoted for consumers.
+
 
 ## Team Structure
 
-**Data Engineering/Data Scrappings:**
+**Repository Operations/Website development:**
 
-Lead: Hugh Wan (wanjunyuan@deakin.edu.au)
+Lead: Agrim Gautum (s221071682@deakin.edu.au)
 
-- Github Responsibilities (maintaining, approving merge requests, etc.)
-- Data Responsibilities (obtaining, integrity, maintaining)
-- Data Pipeline
-- Real time website scraping
+- Github Management (structure, maintaining, approving merge requests, etc.)
+- Website Development (design, build, test, prod)
 
-**Project Team A (Image based CAPTCHA)**
+**Cloud Development**
 
-Lead: William Tan Yoon Lok (tanyoonlok@deakin.edu.au)
+Lead: Jet Spencer Hall (jshal@deakin.edu.au)
 
-- Research (both CAPTCHA and Model research)
-- Model development
-- Model Reviews
+- Cloud Infrastructure (design, build, test)
+- Infrastrucutre as code (develop, test, proceduralise)
+- Product integration
 
-**Project Team B (Text based CAPTCHA)**
+**Breaking Audio CAPTCHA**
 
-Lead: Cecilia Sammut (ccsammut@deakin.edu.au)
+Lead: Luka Croote (lcroote@deakin.edu.au)
 
-- Research (both CAPTCHA and Model research)
-- Model developmentsss
-- Model Review
+- Models to break Audio CAPTCHA
+
+**Breaking Text CAPTCHA)**
+
+Lead: Renee Farina (rfarina@deakin.edu.au)
+
+- Models to break Text CAPTCHA
 
 ## Resource
 
-### Relevant links
+### History
 
-I have compiled some of the findings based on all the post from MS Teams and can be seen below:</p>
+T2 2022 is the second implementation of the Braking CAPTCHA project in Deakin University's Capstone program. In the inaugral implementation the focus of the project was on building models to improve on current installations. The collection of work that was produced in T1 2022 can be found in the [Project History folder](https://github.com/cyber-panther/breaking-captcha/tree/main/Project_History/Trimester01.
 
-- [Kaggle Captcha version 2 Image by fournierp](https://www.kaggle.com/fournierp/captcha-version-2-images)
-- [Kaggle Cracking captcha by aakashnain](https://www.kaggle.com/aakashnain/cracking-captcha)
-- [Learning resource about Python, ML & AL by Angus](https://deakin365.sharepoint.com/sites/DeakinSITCapstone/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FDeakinSITCapstone%2FShared%20Documents%2FDS%20and%20AI%20Community%2FResources%2FCheat%2Dsheets&p=true)
-
-### Data Description
-
-- [CAPTCHA breaking with Deep Learning](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi9-Jby1db2AhVU7HMBHamQCb0QFnoECAUQAQ&url=http%3A%2F%2Fcs229.stanford.edu%2Fproj2017%2Ffinal-reports%2F5239112.pdf&usg=AOvVaw1COvEZdWx9HChGeN4bhUJh): This research paper mention that the have used *PyCaptcha*, which is a python package for CAPTCHA generation, to make custom CAPTCHA image dataset. It offers several degree of freedom such as font style, distortion and noise, so that people can exploit increase the diversity of the data and the difficulty of the recognition task.
+This trimester the focus on model building remains, however we have an additional focus of building infrastrucure and knowledge management solutions that will transcend trimesters and improve the continuity of the Breaking CAPTCHA project in trimesters to come. This is to support the ultimate outcome of developing an interface to solce CAPTCHA's.
 
 ## Operating GitHub (Pull requests)
 
@@ -74,10 +73,7 @@ For a step-by-step guide on how to operate GitHub, you can click on this link: <
 
 ### GitHub Admin
 
-You can contact me if you have any questions regarding this repository:
-
-- Hugh (wanjunyuan@deakin.edu.au)
-- Rayvinder Athwal (rayv@deakin.edu.au)
+You can contact the Agrim Gautum (s221071682@deakin.edu.au) OR Cecilia Sammut (ccsammut@deakin.edu.au) for help with this repo.
 
 This documentation will be updated constantly so keep an eye out!!
 
