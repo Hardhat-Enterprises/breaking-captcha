@@ -3,6 +3,11 @@ from random import choices, choice
 
 # Generate voice for letters
 # Works for Mac terminal
+# Requirements:
+# directory en/ in the same directory containing voices for all letters and numbers
+# directory data/generated-easy/ to store results in
+# ffmpeg
+# espeak
 # for i in {a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,0,1,2,3,4,5,6,7,8,9}; do mkdir en/$i; espeak -a 150 -s 100 -ven $i -w en/$i/orig_default.wav; ffmpeg -i en/$i/orig_default.wav -ar 8000 -ac 1 -acodec pcm_u8 en/$i/default.wav; rm en/$i/orig_default.wav; done
 
 
@@ -17,14 +22,14 @@ def generate_audio_captcha(length, pop, data_dir):
     subset = ''.join(subset)
     data = audio.generate(subset)
     audio.write(subset, data_dir + subset + '.wav')
-# generate_audio_captcha(4, letters_and_numbers, './')
 
 # Upper and lower limits of text range
 if __name__ == '__main__':
     lower_limit = 4
     upper_limit = 10
+    num_samples = 1000
 
     length_range = list(range(lower_limit, upper_limit + 1))
 
-    for _ in range(1000):
+    for _ in range(num_samples):
         generate_audio_captcha(choice(length_range), letters_and_numbers, 'data/generated-easy/')
