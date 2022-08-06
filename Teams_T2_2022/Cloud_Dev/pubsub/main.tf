@@ -12,8 +12,12 @@ provider "google" {
   region = "australia-southeast2"
 }
 
-resource "google_storage_bucket" "test-bucket" {
-  name          = "test_bucket"
-  location      = "US"
-  force_destroy = true
+resource "google_pubsub_topic" "ps1" {
+  name = "bc_ps1"
+
+  labels = {
+    foo = "bar"
+  }
+
+  message_retention_duration = "86600s"
 }
