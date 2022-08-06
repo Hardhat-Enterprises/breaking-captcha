@@ -12,7 +12,7 @@ provider "google" {
   region = "australia-southeast2"
 }
 
-resource "google_storage_bucket" "test-bucket" {
+resource "google_storage_bucket" "test_bucket" {
   name          = "test_bucket"
   location      = "US"
   force_destroy = true
