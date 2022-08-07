@@ -1,0 +1,1 @@
+# Bucket, function, pub/sub and vision resource creation goes here
