@@ -47,13 +47,13 @@ def send_captcha_input(elem, captcha_input):
 
 # Access URL and setup driver
 driver = access_url("https://captcha.com/demos/features/captcha-demo.aspx")
-fetch_audio(driver)
-# #  Find Validation element
-# elem = find_captcha_element(driver)
-# # Solve Catpcha (Classify, currently asks for user input ;))
-# captcha_input = solve_captcha()
-# # Send result to element
-# send_captcha_input(elem, captcha_input)
+# fetch_audio(driver)
+#  Find Validation element
+elem = find_captcha_element(driver)
+# Solve Catpcha (Classify, currently asks for user input ;))
+captcha_input = solve_captcha()
+# Send result to element
+send_captcha_input(elem, captcha_input)
 # import urllib.request
 # urllib.request.urlretrieve("https://captcha.com/forms/captcha-demo-features/captcha-endpoint.php?get=sound&c=demoCaptcha&t=e5c055cace6d04f682f73745c69d9b56", 'test.wav')
 # import wget
