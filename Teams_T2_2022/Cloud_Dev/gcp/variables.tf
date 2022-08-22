@@ -7,7 +7,7 @@ variable "project_id" {
 variable "region" {
   description = "Australia Region"
   type        = string
-  default     = "australia-southeast2"
+  default     = "us-east1"
 }
 
 variable "vpc_access_connector_name" {
