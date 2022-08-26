@@ -4,6 +4,7 @@ data/generated/generated-hard.zip
 data/generated/generated-easy.zip
 data/generated/en
 data/generated/en.zip
+data/botdetect
 .DS_Store
 .idea
 .Rhistory
