@@ -5,9 +5,12 @@ data/generated/generated-easy.zip
 data/generated/en
 data/generated/en.zip
 data/botdetect
+data/botdetect_enhanced
+data/recaptcha
+data/custom
 .DS_Store
 .idea
 .Rhistory
 .idea/*
-
+.env
 
