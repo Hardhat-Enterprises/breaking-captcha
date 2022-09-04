@@ -1,0 +1,71 @@
+
+  SSRC : A fast and high quality sampling rate converter
+                                           written by Naoki Shibata
+
+
+Homepage : http://shibatch.sourceforge.net/
+e-mail   : shibatch@users.sourceforge.net
+
+
+<Features> This program converts sampling rates of PCM wav files. This
+program also has a function to apply dither to its output and extend
+perceived dynamic range.
+
+Sampling rates of 44.1kHz and 48kHz are populary used, but the ratio
+between these two frequencies is 147:160, which are not small numbers.
+As a result, sampling rate conversion without degradation of sound
+quality requires filter with very large order, and it is difficult to
+have both quality and speed. This program quickly converts between
+these sampling frequencies without audible degradation.
+
+<Usage>
+
+ssrc [<options>] <input wav file> <output wav file>
+
+Usage of options are as follows :
+  --rate <sampling rate>
+    Specify sampling rate of output file.
+  --att <value(dB)>
+    Attenuate volume of output by specified value.
+  --twopass
+    Perform two pass processing so that clipping is avoided.
+    At the first pass, the program converts sampling rate of input file and
+    write to a temporary file in float numbers while scanning clippings. At
+    the second pass, the program attenuate the volume so that clipping is
+    prevented, and write to the output file.
+  --normalize
+    Normalize the wave file.
+  --dither [<type>]
+    Apply dithers to the output file.
+    Each output sampling frequency has a different set of available noise shapers.
+      0    : ATH-based noise shaping, low intensity (louder noise)
+      2    : ATH-based noise shaping, medium intensity
+      6    : ATH-based noise shaping, high intensity (quieter noise)
+      99   : No noise shaping
+      help : Show all available noise shapers
+  --bits
+    Specify quantization bit length. 8, 16 and 24bits are supported.
+  --quiet
+    Nothing is displayed except error.
+  --pdf <type> [<peak>]
+    Select probability distribution function and peak amplitude of noise before
+    noise shaping
+      type 0 : Rectangular
+      type 1 : Triangular
+      type 3 : Two-level (experimental)
+  --profile
+    Specify profile
+      "standard" profile : the default setting
+      "fast"     profile : faster setting
+      "long"     profile : slower conversion, longer filter
+
+  Only PCM-coded wav files are used as input and output files.
+  Input and output sampling frequency must satisfy a certain condition, but
+(probably) conversions between all populary used sampling frequencies are
+supported.
+  If sampling frequencies of input and output are same, sampling rate
+conversion is not performed and only conversion of quantization bit length
+with optional dithering are done.
+
+<Condition of distribution>
+  This program is distributed under LGPL2. See LGPL2.txt for details.
