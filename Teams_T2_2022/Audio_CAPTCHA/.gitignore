@@ -1,13 +1,4 @@
-data/generated/generated-easy
-data/generated/generated-hard
-data/generated/generated-hard.zip
-data/generated/generated-easy.zip
-data/generated/en
-data/generated/en.zip
-data/botdetect
-data/botdetect_enhanced
-data/recaptcha
-data/custom
+data/*
 .DS_Store
 .idea
 .Rhistory
