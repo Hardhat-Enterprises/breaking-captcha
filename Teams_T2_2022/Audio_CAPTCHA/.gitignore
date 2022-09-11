@@ -4,4 +4,9 @@ data/*
 .Rhistory
 .idea/*
 .env
-
+*.wav
+*.mp3
+*.mp4
+captcha-solver/models/*
+*/pretrained_models/*
+*/models/*
