@@ -10,3 +10,6 @@ data/*
 captcha-solver/models/*
 */pretrained_models/*
 */models/*
+*.pickle
+*/fine_tune*/*
+*.zip
