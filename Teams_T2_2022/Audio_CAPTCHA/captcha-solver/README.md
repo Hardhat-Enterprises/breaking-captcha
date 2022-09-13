@@ -2,37 +2,33 @@
 
 ## Progress
 
-- recaptcha_solverv2: executable
+- recaptcha_solverv2: executable (requires models folder: email contributers for access)
 - browser automation: in testing
 
 
-# Recaptchav2 Solver (recaptchav2)
-## Discussion
+# Recaptchav2 Solver
+### Discussion
 
 This solver actually works reasonably well in the wild. This is due to [`recaptchv2`](https://recaptcha-demo.appspot.com/recaptcha-v2-checkbox-explicit.php) tests intput against some sort of similarity metric. So traditional testing metrics like Accuracy are not quite applicable, rather WER (word errror rate) or some more generic statistic like (letter error rate) is better.
 
-## Installation
+### Features
+
+- Takes Audio file as input
+- Enhance audio file
+- Generate transcription
+- NOTE: any audio file is suitable that `ffmpeg` can convert to wav 
+- simple extendable functional solution which can take more models (enhancers and trasncriptors)
+
+### Installation
 
 ```
 # Requirements (Versions below is environment tested on)
 Python 3.10.6
 ffmpeg
-```
 
-## Running
-
-```
-# 1. run program
-python3 solve_recaptchav2.py
-# 2. provide relative path to audio file into user input (This is currently just for testing)
-# 3. Hit enter
-```
-NOTE: path must be relative, this is due to the way `ffmpeg` interacts with python process, this will be solved in future updates.
-
-## Testing
-```
+# Installation
 # 1. Download solve_recaptchav2.py, models.zip, requirements.txt
-# 2. Unpack models.zip
+# 2. Unpack models.zip # (email contributers)
 # 3. Install dependencies
 pip install -r /path/to/requirements.txt
 # 4. Install ffmpeg
@@ -43,6 +39,22 @@ python3 solve_recpatchav2.py
 # 7. Input relative path to .mp3 or .wav (so if there is a file one directory up then path would be ../MYAUDIOFILE.mp3)
 # 8. Receive text transcription
 ```
+
+### Running
+
+```
+# 1. run program
+python3 solve_recaptchav2.py
+# 2. provide relative path to audio file into user input (This is currently just for testing)
+# 3. Hit enter
+```
+NOTE: path must be relative, this is due to the way `ffmpeg` interacts with python process, this will be solved in future updates.
+
+### Outstanding work
+
+- TODO Improve heuristic for solving word -> digit
+- TODO Allow executable to take system wide path
+- TODO Fine Tune models to improve performance on captcha datasets
 
 
 # Browser interaction (incomplete)

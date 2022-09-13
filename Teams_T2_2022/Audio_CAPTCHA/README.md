@@ -10,28 +10,26 @@ Contributers:
 
 ## Executive Summary
 The aim of this stream is to develop a program for breaking audio captchas. 
-This program will use AI/ML techniques for enhancing and classifying distored audio extracted from Audio Captchas in the wild. 
+This program will use AI/ML techniques for enhancing and classifying noisey audio extracted from Audio Captchas in the wild. 
 The whole program will integrate the novel ML audio solutions to extract and respond to audio captchas in the wild.
 
+The approach taken so far in this project is to use large fine-tuned and pretrained models to enhance the audio (such as speechbrain audio enhancement) and then transcribe using large fine-tuned and pretrained models. This has lead to some promising results for speech focused audio captchas but poor results for captchas that are dominated by letteers and numbers. 
+
+## Progress
 As at 13/09/2022 the project is still in R&D phase. The summary of items complete is outlined below:
 
 ### Captchas
 - recaptchv2 is the most progressed with a command line program which can provide transcriptions of input audio data. this performs well in the wilde [INSERT STATISTICS HERE]
-- BotDetect (letters and numbers) is still in research stage due to the difficulty of the problem
+- BotDetect (letters and numbers) is still in research stage due to the difficulty of the problem. See `r-and-d/transformers.ipynb` for discussion.
 
-### Tools
-- solve_recaptcha.py: command line program which solves recaptchav2 audio captchas
-- spectral_subtraction algorithm: implemented in `r-and-d`
+### Developed Tools
+- `captcha_solver/solve_recaptcha.py`: command line program which solves recaptchav2 audio captchas
+- spectral_subtraction algorithm: implemented in `r-and-d/transformers`
 
-# Audio Captcha Program Overview
+## Next steps
 
-The below chart shows a high level overview of the breaking captcha project specifically outlining the goals for Audio Captcha team (seen in green).
-
-![Project Overview](./docs/Breaking%20Captcha.png)
-
-The below chart gives a brief view of the main processes in the proposed solution,
-
-![Program Overview](./docs/Breaking%20Audio%20Captcha.png)
+- See r-and-d/transformers.ipynb for indepth discussion on outstanding tasks for solving BotDetect Captcha. 
+- See captcha_solver/README.md for discussion on products and outstanding tasks
 
 ## Data Sources
 
@@ -48,9 +46,6 @@ Key data sources:
 - letters and numbers (BotDetect)
 - spoken (recaptchav2)
 
-## AI/ML Approach
-The approach taken so far in this project is to use large fine-tuned and pretrained models to enhance the audio (such as speechbrain audio enhancement) and then transcribe using large fine-tuned and pretrained models. This has lead to some promising results for speech focused audio captchas but poor results for captchas that are dominated by letteers and numbers. 
-
 ## Resources
 The resources we currently use are tensorflow, pytorch. The HugginFace (https://huggingface.co/) being the main source of pretrained models. ssrc-1.33 is used for upsampling audio files to 16KHz efficiently for use with models mainly trained in this range. Currently in the works is using Google Cloud platform (GCP) to act as a transcriber.
 
@@ -66,6 +61,16 @@ Fu, S.-W., Yu, C., Hsieh, T.-A., Plantinga, P., Ravanelli, M., Lu, X., & Tsao, Y
 Bagchi, D., Plantinga, P., Stiff, A., & Fosler-Lussier, E. (2018). Spectral Feature Mapping with Mimic Loss for Robust Speech Recognition. IEEE Conference on Audio, Speech, and Signal Processing (ICASSP).
 
 Wang, C., Tang, Y., Ma, X., Wu, A., Okhonko, D., & Pino, J. (2020). fairseq S2T: Fast Speech-to-Text Modeling with fairseq. Proceedings of the 2020 Conference of the Asian Chapter of the Association for Computational Linguistics (AACL): System Demonstrations.
+
+# Audio Captcha Project Overview (intensions for future progress)
+
+The below chart shows a high level overview of the breaking captcha project specifically outlining the goals for Audio Captcha team (seen in green).
+
+![Project Overview](./docs/Breaking%20Captcha.png)
+
+The below chart gives a brief view of the main processes in the proposed solution,
+
+![Program Overview](./docs/Breaking%20Audio%20Captcha.png)
 
 
 ## Usage and Guides
@@ -88,6 +93,7 @@ Main product directory see captcha_solver/README.md.
 
 #### ssrc-1.33
 C++ based cmd line program for smoothly upsampling audio files with limited artifacts.
+
 
 
 
