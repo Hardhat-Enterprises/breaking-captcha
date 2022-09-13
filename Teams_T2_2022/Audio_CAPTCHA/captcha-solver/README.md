@@ -1,6 +1,12 @@
+# Captcha Solver Product Directory
+
+## Progress
+
+- recaptcha_solverv2: executable
+- browser automation: in testing
+
+
 # Recaptchav2 Solver (recaptchav2)
-
-
 ## Discussion
 
 This solver actually works reasonably well in the wild. This is due to [`recaptchv2`](https://recaptcha-demo.appspot.com/recaptcha-v2-checkbox-explicit.php) tests intput against some sort of similarity metric. So traditional testing metrics like Accuracy are not quite applicable, rather WER (word errror rate) or some more generic statistic like (letter error rate) is better.

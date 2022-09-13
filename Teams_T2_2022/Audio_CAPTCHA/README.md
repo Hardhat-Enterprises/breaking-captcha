@@ -8,12 +8,22 @@ Contributers:
 - Theodore Hrysomallis (thrysomallis@deakin.edu.au)
 - Josh Tolding (jtolding@deakin.edu.au)
 
-## Summary
+## Executive Summary
 The aim of this stream is to develop a program for breaking audio captchas. 
 This program will use AI/ML techniques for enhancing and classifying distored audio extracted from Audio Captchas in the wild. 
 The whole program will integrate the novel ML audio solutions to extract and respond to audio captchas in the wild.
 
-## Audio Captcha Program Overview
+As at 13/09/2022 the project is still in R&D phase. The summary of items complete is outlined below:
+
+### Captchas
+- recaptchv2 is the most progressed with a command line program which can provide transcriptions of input audio data. this performs well in the wilde [INSERT STATISTICS HERE]
+- BotDetect (letters and numbers) is still in research stage due to the difficulty of the problem
+
+### Tools
+- solve_recaptcha.py: command line program which solves recaptchav2 audio captchas
+- spectral_subtraction algorithm: implemented in `r-and-d`
+
+# Audio Captcha Program Overview
 
 The below chart shows a high level overview of the breaking captcha project specifically outlining the goals for Audio Captcha team (seen in green).
 
@@ -32,11 +42,17 @@ Key data sources:
 - recaptcha v2 data (spoken speech): see https://recaptcha-demo.appspot.com/recaptcha-v2-checkbox-explicit.php
 - BotDetect data (letters and numbers): see https://captcha.com/audio-captcha-examples.html
 
+## Types of Audio Captcha
+
+- numbers (recaptcha)
+- letters and numbers (BotDetect)
+- spoken (recaptchav2)
+
 ## AI/ML Approach
 The approach taken so far in this project is to use large fine-tuned and pretrained models to enhance the audio (such as speechbrain audio enhancement) and then transcribe using large fine-tuned and pretrained models. This has lead to some promising results for speech focused audio captchas but poor results for captchas that are dominated by letteers and numbers. 
 
 ## Resources
-The resources we currently use are tensorflow, pytorch. The HugginFace (https://huggingface.co/) being the main source of pretrained models. Currently in the works is using Google Cloud platform (GCP) to act as a transcriber
+The resources we currently use are tensorflow, pytorch. The HugginFace (https://huggingface.co/) being the main source of pretrained models. ssrc-1.33 is used for upsampling audio files to 16KHz efficiently for use with models mainly trained in this range. Currently in the works is using Google Cloud platform (GCP) to act as a transcriber.
 
 ### Data
 Due to the size of the data, this could not be uploaded. Email the Audio breaking captcha team (details provided above) for data.
@@ -68,9 +84,11 @@ Folder containing all R&D for audio processing and classification. Models are tr
     - Implementation of workable spectral subtraction algorithm
 
 #### captcha-solver
-Python package for solving Audio Captchas.
+Main product directory see captcha_solver/README.md.
 
-- Models for processing are versioned and stored in `captcha-solver/models`. 
-- Entry point to the program: `captcha-solver/captcha-solver.py`.
-- testing: `captcha-solver/test`
+#### ssrc-1.33
+C++ based cmd line program for smoothly upsampling audio files with limited artifacts.
+
+
+
 
