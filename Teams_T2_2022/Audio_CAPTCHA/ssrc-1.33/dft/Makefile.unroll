@@ -1,0 +1,31 @@
+CFLAGS2 := $(CFLAGS) -std=c99 -I../common/ -DMAXBUTWIDTH=$(MAXBUTWIDTH)
+
+ifeq "$(GCCARCH)" "arm"
+	MFPUNEON=-mfpu=neon
+endif
+
+all : $(OBJ)
+
+%_purecsp.o : %_purecsp.c
+	$(CC) $(CFLAGS2) -DSLEEFDFT_REAL_IS_FLOAT -DPUREC_FLOAT -c $< -o $@
+
+%_sse3sp.o : %_sse3sp.c
+	$(CC) $(CFLAGS2) -msse -msse2 -msse3 -DSLEEFDFT_REAL_IS_FLOAT -DSSE3_FLOAT -c $< -o $@
+
+%_avxsp.o : %_avxsp.c
+	$(CC) $(CFLAGS2) -msse -msse2 -msse3 -mavx -DSLEEFDFT_REAL_IS_FLOAT -DAVX_FLOAT -c $< -o $@
+
+%_purecdp.o : %_purecdp.c
+	$(CC) $(CFLAGS2) -DPUREC_DOUBLE -c $< -o $@
+
+%_sse3dp.o : %_sse3dp.c
+	$(CC) $(CFLAGS2) -msse -msse2 -msse3 -DSSE3_DOUBLE -c $< -o $@
+
+%_avxdp.o : %_avxdp.c
+	$(CC) $(CFLAGS2) -msse -msse2 -msse3 -mavx -DAVX_DOUBLE -c $< -o $@
+
+%_neonsp.o : %_neonsp.c
+	$(CC) $(CFLAGS2) $(MFPUNEON) -DSLEEFDFT_REAL_IS_FLOAT -DNEON_FLOAT -c $< -o $@
+
+%_neondp.o : %_neondp.c
+	$(CC) $(CFLAGS2) -DNEON_DOUBLE -c $< -o $@

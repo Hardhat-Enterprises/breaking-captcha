@@ -1,0 +1,88 @@
+ifeq ($(CC),cc)
+CC=gcc
+endif
+
+UNROLLMAX=-1
+UNROLLMAX2=-1
+MAXBUTWIDTH=5
+
+CFLAGS2 := $(CFLAGS) -std=c99 -I../common/ -DMAXBUTWIDTH=$(MAXBUTWIDTH) -DSLEEFDFT_REAL_IS_FLOAT
+
+# Detect number of processors
+
+NPROCS := 1
+OS := $(shell uname)
+export NPROCS
+ifeq ($J,)
+ifeq ($(NUMBER_OF_PROCESSORS),)
+ifeq ($(OS),Linux)
+  NPROCS := $(shell grep -c ^processor /proc/cpuinfo)
+else ifeq ($(OS),Darwin)
+  NPROCS := 2
+endif # $(OS)
+else
+  NPROCS := $(NUMBER_OF_PROCESSORS)
+endif
+else
+  NPROCS := $J
+endif # $J
+
+# Detect architecture
+
+GCCARCH = $(shell $(CC) -v 2>&1 | grep ^Target | sed -e 's/^.* //g' -e 's/-.*//g')
+
+ISALIST=purecsp
+
+ifeq "$(GCCARCH)" "i386"
+	ISALIST=purecsp sse3sp avxsp
+endif
+
+ifeq "$(GCCARCH)" "i686"
+	ISALIST=purecsp sse3sp avxsp
+endif
+
+ifeq "$(GCCARCH)" "x86_64"
+	ISALIST=purecsp sse3sp avxsp
+endif
+
+ifeq "$(GCCARCH)" "arm"
+	ISALIST=purecsp neonsp
+endif
+
+ifeq "$(GCCARCH)" "aarch64"
+	ISALIST=purecsp neonsp
+endif
+
+ifeq "$(OS)" "Darwin"
+	ISALIST=purecsp sse3sp
+endif
+
+#
+
+all : dftsp.a
+
+clean :
+	rm -f *.o *.s *~ *.exe
+	rm -rf *.dSYM
+	rm -f a.out mkunroll mkdispatch dispatch.h dft.a dftsp.a naivetest
+	rm -f unroll0_*.c unroll1_*.c unroll2_*.c unroll0s_*.c unroll1s_*.c unroll2s_*.c 
+
+naivetest : naivetest.c dftsp.a
+	$(CC) $(CFLAGS2) -std=c99 naivetest.c -o naivetest dftsp.a -lm 
+
+dftsp.a : mkunroll dft.o
+	./mkunroll $(UNROLLMAX) $(UNROLLMAX2) $(ISALIST)
+	"$(MAKE)" -j $(NPROCS) -f Makefile.unroll CC=$(CC) CFLAGS="$(CFLAGS2)" GCCARCH=$(GCCARCH) MAXBUTWIDTH=$(MAXBUTWIDTH) UNROLLMAX=$(UNROLLMAX) UNROLLMAX2=$(UNROLLMAX2) OBJ="`echo unroll*.c | sed -e 's/\.c/\.o/g'`"
+	ar rcs dftsp.a `echo unroll*.o` dft.o
+
+dft.o : dft.c dispatch.h
+	$(CC) $(CFLAGS2) -std=c99 dft.c -c -o dft.o
+
+mkdispatch : mkdispatch.c
+	$(CC) $(CFLAGS2) -std=c99 mkdispatch.c -o mkdispatch
+
+mkunroll : mkunroll.c
+	$(CC) $(CFLAGS2) -std=c99 mkunroll.c -o mkunroll
+
+dispatch.h : mkdispatch
+	./mkdispatch $(UNROLLMAX) $(UNROLLMAX2) $(MAXBUTWIDTH) $(ISALIST) > dispatch.h
