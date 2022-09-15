@@ -1,4 +1,4 @@
-$("#navbar").load("/resources/common/navbar.html");
+$("#navbar").load("/breaking-captcha/resources/common/navbar.html");
 
 (function() {
   "use strict"; // Start of use strict
