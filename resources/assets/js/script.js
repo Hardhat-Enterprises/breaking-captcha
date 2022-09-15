@@ -1,4 +1,4 @@
-$("#navbar").load("/resources/common/navbar.html");
+$("#navbar").load("/breaking-captcha/resources/common/navbar.html");
 
 (function() {
   "use strict"; // Start of use strict
@@ -6,7 +6,7 @@ $("#navbar").load("/resources/common/navbar.html");
   // Show the navbar when the page is scrolled up
   var MQL = 992;
   var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-  var mainNav = document.querySelector('#mainNav');
+  var mainNav = document.querySelector('#mainnav');
 
   //primary navigation slide-in effect
   if (mainNav && vw > MQL) {
