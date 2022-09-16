@@ -4,9 +4,6 @@ This is the Project directory for Breaking Audio Captcha project for Deakin Caps
 Contributers:
 
 - Luka Croote (lcroote@deakin.edu.au)
-- Ridwan Ganiyu (rbganiyu@deakin.edu.au)
-- Theodore Hrysomallis (thrysomallis@deakin.edu.au)
-- Josh Tolding (jtolding@deakin.edu.au)
 
 ## Executive Summary
 The aim of this stream is to develop a program for breaking audio captchas. 
@@ -16,15 +13,19 @@ The whole program will integrate the novel ML audio solutions to extract and res
 The approach taken so far in this project is to use large fine-tuned and pretrained models to enhance the audio (such as speechbrain audio enhancement) and then transcribe using large fine-tuned and pretrained models. This has lead to some promising results for speech focused audio captchas but poor results for captchas that are dominated by letteers and numbers. 
 
 ## Progress
-As at 13/09/2022 the project is still in R&D phase. The summary of items complete is outlined below:
+The project is still in R&D phase. The summary of items complete is outlined below:
 
 ### Captchas
-- recaptchv2 is the most progressed with a command line program which can provide transcriptions of input audio data. this performs well in the wilde [INSERT STATISTICS HERE]
+- recaptchv2 is the most progressed with a command line program which can provide transcriptions of input audio data. this performs well in the wild [INSERT STATISTICS HERE]
 - BotDetect (letters and numbers) is still in research stage due to the difficulty of the problem. See `r-and-d/transformers.ipynb` for discussion.
 
 ### Developed Tools
 - `captcha_solver/solve_recaptcha.py`: command line program which solves recaptchav2 audio captchas
+    - 2 asr models
+    - 2 audio pretrained audio enhancement models
+    - wrapped up in program which uses a simple heuristic to take the best results form multiple attempts
 - spectral_subtraction algorithm: implemented in `r-and-d/transformers`
+    - based on academic paper
 
 ## Next steps
 
