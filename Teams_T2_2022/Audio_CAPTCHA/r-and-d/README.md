@@ -25,7 +25,7 @@ as you can see, due to the noise we do not get clear words, so a heuristic must 
     4. Finally looking at `transformers.ipynb` we can see that using a simple clustering algoirthm on fixed width widows may group together speech samples thus avoiding labelling.
 
 - Train classifier on segments to identify ([0-9A-Z])
-    1. We can use the approach taken in TIMIT dataset where phonemes are mapped
+    1. We can use the approach taken in TIMIT dataset where phonemes are mapped [see here](https://catalog.ldc.upenn.edu/docs/LDC93S1/)
     2. Noise means that the same number may sound and "look" very different, so require breaking down of key sounds OR a lot of data
-    
+
 - Combine results into final string
