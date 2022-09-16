@@ -29,3 +29,7 @@ as you can see, due to the noise we do not get clear words, so a heuristic must 
     2. Noise means that the same number may sound and "look" very different, so require breaking down of key sounds OR a lot of data
 
 - Combine results into final string
+
+## Improve Spectral subtraction
+
+Another outstanding item is to improve the spectral subtraction algorithm from `transformers.ipynb`. This can be better paramterised and tested given there are some shortfalls.
