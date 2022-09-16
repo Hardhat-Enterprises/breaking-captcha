@@ -5,7 +5,6 @@
 - recaptcha_solverv2: executable (requires models folder: email contributers for access)
 - browser automation: in testing
 
-
 # Recaptchav2 Solver
 ### Discussion
 
@@ -18,6 +17,20 @@ This solver actually works reasonably well in the wild. This is due to [`recaptc
 - Generate transcription
 - NOTE: any audio file is suitable that `ffmpeg` can convert to wav 
 - simple extendable functional solution which can take more models (enhancers and trasncriptors)
+
+### How it Works
+
+The program works by taking a list of input asr models and a list of input audio enhancement models (currently contains 2 implemented in each).
+
+- Audio Enhancement:
+    - metricgan-plus-voicebank Spectral Mask
+    - mtl-mimic-voicebank Waveform enhancments
+- Automatic Speech Recognition:
+    - s2t-small-librispeech-asr Speech2Text
+    - wav2vec2-base-960h Spectral Feature Mapping
+
+Input audio file is converted to requirement `.wav` format using ffmpeg, audio is then sampled, enhanced and trasncribed using all combinations of models listed above. Finally using a simple heuristic the trasncriptions are compared and most viable is selected.
+
 
 ### Installation
 
@@ -55,7 +68,6 @@ NOTE: path must be relative, this is due to the way `ffmpeg` interacts with pyth
 - TODO Improve heuristic for solving word -> digit
 - TODO Allow executable to take system wide path
 - TODO Fine Tune models to improve performance on captcha datasets
-
 
 # Browser interaction (incomplete)
 
