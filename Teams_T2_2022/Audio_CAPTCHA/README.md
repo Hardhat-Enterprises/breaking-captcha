@@ -16,7 +16,7 @@ The approach taken so far in this project is to use large fine-tuned and pretrai
 The project is still in R&D phase. The summary of items complete is outlined below:
 
 ### Captchas
-- recaptchv2 is the most progressed with a command line program which can provide transcriptions of input audio data. this performs well in the wild [INSERT STATISTICS HERE]
+- recaptchv2 is the most progressed with a command line program which can provide transcriptions of input audio data. this performs well in the wild with the model have character error rate of 30%. This performs well in practise due to google recaptchav2 accepting similar inouts rather than exact. See video provided as evidence.
 - BotDetect (letters and numbers) is still in research stage due to the difficulty of the problem. See `r-and-d/transformers.ipynb` for discussion.
 
 ### Developed Tools
