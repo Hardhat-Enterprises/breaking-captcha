@@ -29,11 +29,28 @@ Below is a table of what's covered in this readme document.  </p>
 
 
 ## **GCP Details:** ##
-<p>Inside of GCP is the Terraform code
+<p>Inside of GCP is majority of the terraform files utilized in this project that helped create the GCS storage buckets. <strong>These include:</strong></p>
+ 
+        - function code folder
+        - api.tf 
+        - gcptf.tfvars
+        - main.tf
+        - network.tf
+        - provider.tf
+        - variables.tf
+  
+**functions folder consists of the following:**
+  * main.py ~ Which is the source code of the cloud functions 
+  * requirements.txt ~ list of python libraries required by main.py to run. 
 
+**Main.tf**:
+  * This file is created to establish the main declarations of the developed environment. 
 
+**Variables.tf**:
+  * This files is used to deine and store the variables that can then be declared when constructing the GCS storage buckets. 
 
-</p>
+**API.tf**:
+  * Required to esablish communication/access between terraform and GCS.  
 
 ## **Onboarding Details:** ##
 <p>Inside of onboarding is the onboarding guides for the this project
