@@ -25,7 +25,7 @@
 
 <body>
 
-    <header >
+    <header>
         <div id="navbar"></div>
     </header>
     <!--
@@ -48,8 +48,8 @@
     </div>
 
     <div class="d-flex justify-content-center">
-        <img class="img-thumbnail"  width="75%" src="/breaking-captcha/resources/assets/img/ai.jpg"  id="myPicture"
-            alt="test">
+        <img class="img-thumbnail" width="75%" src="/breaking-captcha/resources/assets/img/samples/226md.png"
+            id="myPicture" alt="test">
     </div>
 
     <div class="d-flex justify-content-around m-5">
@@ -57,14 +57,14 @@
         <button type="button" id="solve" class="btn btn-dark btn-lg px-5">solve</button>
 
     </div>
-        <div class="col-md-12">
-            <p style="text-align:center">
-                <b>
-                    Want to use your own CAPTCHA data?
-                    <a target="_blank" href="https://breakingcaptcha.live">Try our models!</a>
-                </b>
-            </p>
-        </div>
+    <div class="col-md-12">
+        <p style="text-align:center">
+            <b>
+                Want to use your own CAPTCHA data?
+                <a target="_blank" href="https://breakingcaptcha.live">Try our models!</a>
+            </b>
+        </p>
+    </div>
 
     <br>
 
@@ -120,7 +120,19 @@
         });
 
         $("#solve").click(function () {
-            alert(localStorage.getItem("ans"));
+
+            // set button text to solving
+            $("#solve").text("Solving...");
+
+            // wait 1 seconds
+            setTimeout(function () {
+                // alert( "Handler for .click() called." );
+                var ans = localStorage.getItem("ans");
+                alert(ans);
+                
+                $("#solve").text("Solve");
+            }, 1000);
+
         });
 
     </script>
