@@ -11,7 +11,7 @@ Terraform can be installed via Homebrew for Mac
 Next run this command to verify your installation:
 >terraform -version
 
-Next for syntax and error highlighting install the VS Code Extenion Terraform by Hasicorp
+Next for syntax and error highlighting install the **VS Code Extenion Terraform by Hasicorp**
 
 ### Gcloud CLI
 
