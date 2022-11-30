@@ -32,7 +32,7 @@ def sleep_decorator(original_function):
 def sleep_decorator_short(original_function):
     def wrapper_function(*args, **kwargs):
         # always sleep a random second before action
-        time.sleep(random.uniform(2,4))
+        time.sleep(random.uniform(1,2))
         result = original_function(*args, **kwargs)
 
         return result
@@ -43,6 +43,11 @@ press_key = sleep_decorator(pyautogui.press)
 mouse_move_to = sleep_decorator(pyautogui.moveTo)
 mouse_click = sleep_decorator(pyautogui.click)
 write_filename = sleep_decorator(pyautogui.write)
+
+press_key_short = sleep_decorator_short(pyautogui.press)
+mouse_move_to_short = sleep_decorator_short(pyautogui.moveTo)
+mouse_click_short = sleep_decorator_short(pyautogui.click)
+write_filename_short = sleep_decorator_short(pyautogui.write)
 
 class MenuLocateStrategy:
     @abstractmethod

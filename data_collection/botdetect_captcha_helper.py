@@ -18,14 +18,14 @@ class LocateByIdStrategy(MenuLocateStrategy):
 class BotdetectAudioDownload(Download_operation):
     def select_from_context_menu(self):
         for i in range(5):
-            press_key('down')
-        press_key('enter')
+            press_key_short('down')
+        press_key_short('enter')
 
 class BotdetectPictureDownload(Download_operation):
     def select_from_context_menu(self):
-        press_key('down')
-        press_key('down')
-        press_key('enter')
+        press_key_short('down')
+        press_key_short('down')
+        press_key_short('enter')
 
 
 class BotdetectAudioDownloader(CaptchaFactory):
