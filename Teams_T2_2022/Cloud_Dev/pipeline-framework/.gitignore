@@ -1,0 +1,4 @@
+database/*
+minio-server/*
+mlruns
+mlartifacts/*
