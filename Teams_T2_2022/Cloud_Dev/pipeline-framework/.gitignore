@@ -2,3 +2,4 @@ database/*
 minio-server/*
 mlruns
 mlartifacts/*
+minio_data/*

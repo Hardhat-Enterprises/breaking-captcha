@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 
 mlflow.set_tracking_uri("http://localhost:8000")
-mlflow.set_experiment("logging-test")
+mlflow.set_experiment("logging-test4")
 
 df = pd.read_csv("https://raw.githubusercontent.com/kylegallatin/mlops-pipeline/main/experiment-tracking/kc_house_data.csv") 
 

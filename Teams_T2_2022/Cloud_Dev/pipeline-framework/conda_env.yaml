@@ -1,4 +1,4 @@
-name: mlflow-env2
+name: mlflow-env3
 channels:
   - apple
   - conda-forge
@@ -18,3 +18,4 @@ dependencies:
     - numpy
     - pandas
     - mlflow
+    - boto3
