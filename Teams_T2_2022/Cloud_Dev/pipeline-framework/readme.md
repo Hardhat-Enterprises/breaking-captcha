@@ -66,15 +66,22 @@ mlflow server  --port 8000 \
 export MLFLOW_TRACKING_URI=http://localhost:8000
 
 # Serve the production model from the model registry
-mlflow models prepare-env -m  --env-manager "local" 
 mlflow models serve -m "models:/text-captcha/latest" --env-manager "local" -p 8888
 
-# IN TESTING
-# Build a Docker image named 'my-image-name' that serves the model from run 'http://localhost:8000'
-# at run-relative artifact path 'my-model'
-# mlflow models build-docker --model-uri "s3://breaking-captcha/5/523bccc9e41e4c999f03903687b0d616" --name "text-captcha"
-# Serve the model
-#docker run -p 5001:8080 "my-image-name"
 ```
 
 ## Remote (VM)
+
+# Running App Locally
+
+To run the flask demo app locally use the below steps. In summary this launches `mlflow` server which uses `sqlite` for metadata and `minio` for artifact storage. The App is a flask app that queries the deployed model endpoint. 
+
+```
+1. Start minio server (see above)
+2. Start Mlflow server (see above)
+3. Deploy Registered Model (see above)
+4. Run Flask app
+cd flask-app
+python app.py
+5. Go to port for localhost
+```
