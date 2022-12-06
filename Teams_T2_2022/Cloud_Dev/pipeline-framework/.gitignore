@@ -5,3 +5,10 @@ mlartifacts/*
 minio_data/*
 testing/samples/*
 minio_data
+*/samples/*
+input/captcha-version-2-images/samples/*
+flask-app/input/captcha-version-2-images/samples
+T2_app/input/captcha-version-2-images/samples
+T2_app/input/models
+T2_app/input/pretrained_models
+*/env/
