@@ -64,20 +64,17 @@ mlflow server  --port 8000 \
 
 # Set environment variable for the tracking URL where the Model Registry resides
 export MLFLOW_TRACKING_URI=http://localhost:8000
-pip install virtualenv
-
 
 # Serve the production model from the model registry
 mlflow models prepare-env -m  --env-manager "local" 
 mlflow models serve -m "models:/text-captcha/latest" --env-manager "local" -p 8888
 
+# IN TESTING
 # Build a Docker image named 'my-image-name' that serves the model from run 'http://localhost:8000'
 # at run-relative artifact path 'my-model'
-mlflow models build-docker --model-uri "s3://breaking-captcha/5/523bccc9e41e4c999f03903687b0d616" --name "text-captcha"
+# mlflow models build-docker --model-uri "s3://breaking-captcha/5/523bccc9e41e4c999f03903687b0d616" --name "text-captcha"
 # Serve the model
-docker run -p 5001:8080 "my-image-name"
-
-
+#docker run -p 5001:8080 "my-image-name"
 ```
 
 ## Remote (VM)

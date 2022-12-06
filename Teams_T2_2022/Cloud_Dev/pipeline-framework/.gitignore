@@ -3,5 +3,5 @@ minio-server/*
 mlruns
 mlartifacts/*
 minio_data/*
-testing/samples
+testing/samples/*
 minio_data
