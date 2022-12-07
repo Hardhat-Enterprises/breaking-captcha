@@ -76,6 +76,5 @@ def invoke_predictor(path_to_data, host = '0.0.0.0', port = '8888'):
     print(pred)
 
 if __name__ == '__main__':
-
     invoke_predictor('samples/2b827.png')
 

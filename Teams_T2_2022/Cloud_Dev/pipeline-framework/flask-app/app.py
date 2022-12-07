@@ -13,6 +13,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Activation, MaxPooling2D, Flatten, Conv2D, Dropout, Dense
 import mlflow
 import sys
+from mlflow import MlflowClient
 
 # ################################################################################
 # ------------------------------- Text Prediction -------------------------------
@@ -188,7 +189,7 @@ def segmentation(image):
 
     return X
 
-# function to invoke predictor endpoint
+# function to invoke predictor
 def invoke_predictor(path_to_data, host = '0.0.0.0', port = '8888'):
 	import requests
 	import json 
@@ -214,6 +215,37 @@ def invoke_predictor(path_to_data, host = '0.0.0.0', port = '8888'):
 	pred = np.argmax(pred, axis = 1)
 	return pred
 
+def test_prediction(host = '0.0.0.0', port = '8888'):
+	import requests
+	import json 
+	import ast
+
+	# host = '0.0.0.0'
+	# port = '8888'
+
+	url = f'http://{host}:{port}/ping'
+	# headers = {
+	# 	'Content-Type': 'application/json',
+	# }
+	r = requests.get(url=url)
+
+	return r.text
+
+def check_models():
+	from pprint import pprint
+
+	client = MlflowClient(tracking_uri='http://localhost:8000')
+	for rm in client.search_registered_models():
+		latest_versions = dict(rm)['latest_versions']
+		for version in latest_versions:
+			current_version = dict(version)
+			if current_version['current_stage'] == 'Production':
+				model = current_version
+
+	return model
+			# print(current_version['current_stage'])
+		# pprint(dict(rm), indent=4)
+# http://0.0.0.0:8888/version
 # ################################################################################
 # ------------------------------- End Text Prediction -----------------------------
 # ################################################################################
@@ -235,12 +267,21 @@ def get_text_output():
 		img.save(img_path)
 
 		# p = text_predictor(img_path, trained_model, info)
-		p = invoke_predictor(img_path)
-		output = []
-		for res in p:
-			output.append(label_dict[res])
+		# test = test_prediction()
+		# print(test)
+		model = check_models()
+
+		try:
+			p = invoke_predictor(img_path)
+			output = []
+			for res in p:
+				output.append(label_dict[res])
+			output = ''.join(output)
+		except:
+			output = 'Model Not Found'
+
 		
-	return render_template("index.html", prediction = ''.join(output), img_path = img_path)
+	return render_template("index.html", prediction = output, img_path = img_path, model = model)
 
 if __name__ =='__main__':
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))

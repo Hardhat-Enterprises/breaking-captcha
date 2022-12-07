@@ -96,7 +96,6 @@ def trainer(sample_path, batch_size = 150, epochs = 40):
   mlflow.set_tracking_uri("http://localhost:8000")
   mlflow.set_experiment("text-captcha0")
   
-
   # Since there are subfolders inside the input directory, we've used nested loops
   X = []
   y = []
@@ -130,7 +129,7 @@ def trainer(sample_path, batch_size = 150, epochs = 40):
   # Build Model
   model = build_model(categories, row, col)
 
-  mlflow.start_run
+  mlflow.start_run()
   mlflow.tensorflow.autolog(every_n_iter=2)
   # Train and Validate
   model.fit(X_train, y_train,
@@ -158,8 +157,9 @@ def text_predictor(img_path, trained_model, info):
   return (''.join(output))
 
 if __name__ == "__main__":
-  script = sys.argv[0]
-  argument = sys.argv[1]
+  # script = sys.argv[0]
+  # argument = sys.argv[1]
   # action = sys.argv[1]
   # arguments = sys.argv[2:]
-  trainer(argument)
+  # trainer(argument)
+  trainer('samples')

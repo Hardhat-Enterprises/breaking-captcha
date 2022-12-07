@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>BreakingCAPTCHA</title>
     <link rel="stylesheet" href="static/assets/icons/icons.css">
-	  <link rel="stylesheet" href="static/assets/css/bc.css">
+    <link rel="stylesheet" href="static/assets/css/bc.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
@@ -35,7 +35,7 @@
                         </div>
                     </form> 
                 </div>
-                <div class="col-md-6 d-none d-md-block">
+                <!-- <div class="col-md-6 d-none d-md-block">
                     <form class="header-form" action="/submit_audio" method="POST" enctype="multipart/form-data">
                         <div class="head">Upload Audio here</div>
                         <div class="body">
@@ -47,11 +47,12 @@
                             <button class="btn btn-info btn-block" type="submit" name="submit_audio">Submit</button>
                         </div>
                     </form> 
-                </div>
+                </div> -->
                 <div class="prediction_model">
                   {% if prediction %}
                   <img src="{{img_path}}" height="50px" width="200px">
                   <h2> CAPTCHA Text: <i> {{prediction}} </i></h2>
+                  <h5> Model Used: <i> {{model}} </i></h2>
                   {% endif %}
               </div>
               <div class="row h-10">
