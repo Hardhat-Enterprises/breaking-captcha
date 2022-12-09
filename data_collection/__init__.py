@@ -32,7 +32,7 @@ def sleep_decorator(original_function):
 def sleep_decorator_short(original_function):
     def wrapper_function(*args, **kwargs):
         # always sleep a random second before action
-        time.sleep(random.uniform(0.5,1))
+        time.sleep(random.uniform(0.2,0.3))
         result = original_function(*args, **kwargs)
 
         return result
