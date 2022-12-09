@@ -1,8 +1,15 @@
 from  data_collection import *
+from selenium.webdriver.support.ui import Select
 
 audio_id = 'demoCaptcha_SoundLink'
 refresh_id = 'demoCaptcha_ReloadIcon'
 picture_id = 'demoCaptcha_CaptchaImageDiv'
+
+# used to select CAPTCHA length
+minCode = 'minCodeLength'
+maxCode = 'maxCodeLength'
+applyBtn = 'applyButton'
+
 
 class LocateByIdStrategy(MenuLocateStrategy):
     def __init__(self,driver, id):
@@ -47,7 +54,19 @@ class BotdetectTask(DataCollectionTask):
     url = DataCollectionTask.url_pool.get('botdetect')
 
     def load_webpage(cls):
+        # change setting before downloading
         cls.driver.get(cls.url)
+        # now we are only interested in CAPTCHAs that are of length1
+        select = Select(cls.driver.find_element(By.ID, minCode))
+        # select by visible text
+        select.select_by_visible_text('1')
+        select = Select(cls.driver.find_element(By.ID, maxCode))
+        # select by visible text
+        select.select_by_visible_text('1')
+
+        # click apply button
+        ele_refresh = get_btn_by_id(cls.driver, applyBtn)
+        ele_refresh.click()
 
     def download(self, fname):
         picture_downloader = BotdetectPictureDownloader().get_downloader()
