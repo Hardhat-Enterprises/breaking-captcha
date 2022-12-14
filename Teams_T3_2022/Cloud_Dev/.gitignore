@@ -1,0 +1,10 @@
+pipeline/T2_app/input/*
+pipeline/T2_app/pretrained_models/*
+pipeline/input/*
+pipeline/pretrained_models/*
+pipeline/env/*
+pipeline/T2_app/env/*
+.DS_Store
+*/.DS_Store
+.idea
+*/.idea

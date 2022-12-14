@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>BreakingCAPTCHA</title>
+    <link rel="stylesheet" href="static/assets/icons/icons.css">
+    <link rel="stylesheet" href="static/assets/css/bc.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header class="header d-flex justify-content-center">
+        <div class="container">
+            <div class="row h-50 align-items-center">
+                <div class="col-md-7">
+                    <div class="header-content">
+                        <h3 class="header-title"><strong class="text-primary">BREAKING</strong><span style="color: white; font-weight:bold">CAPTCHA</span></h3>
+                        <h4 class="header-subtitle">CAPTCHA Classification Model </h4>
+                    </div>  
+                </div>
+                <img src="/static/bc.png" alt="Italian Trulli">
+            </div>  
+            <div class="row h-50">
+                <div class="col-md-6 d-none d-md-block">
+                    <form class="header-form" action="/submit_image" method="POST" enctype="multipart/form-data">
+                        <div class="head">Upload Image here</div>
+                        <div class="body">
+                            <div class="form-group">
+                                <input type="file" class="form-control"  name="image_file" id="image_file" accept=".jpg, .jpeg, .png" required>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <button class="btn btn-info btn-block" type="submit" name="submit_image">Submit</button>
+                        </div>
+                    </form> 
+                </div>
+                <div class="col-md-6 d-none d-md-block">
+                    <form class="header-form" action="/" method="" enctype="multipart/form-data">
+                        <div class="head">Model Information</div>
+                        <div class="body">
+                            <div class="form-group">
+                                {% if prediction %}
+                                <h5 style="color:#33475b">Model Name: <i> {{model.name}} </i></h5> <br>
+                                <h5 style="color:#33475b">Model Version: <i> {{model.version}} </i></h5> <br>
+                                <h5 style="color:#33475b">Model Stage: <i> {{model.current_stage}} </i></h5> <br>
+                                <h5 style="color:#33475b">Last Updated: <i> {{model.last_updated_timestamp}} </i></h5> <br>                                
+                                {% endif %}
+                                <!-- <input type="file" class="form-control"  name="audio_file" id="audio_file" accept=".mp3, .mp4, .wav, .wma, .aac, .flac, .m4a" required> -->
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <!-- <button class="btn btn-info btn-block" type="submit" name="submit_audio">Submit</button> -->
+                        </div>
+                    </form> 
+                </div>
+                <div class="prediction_model">
+                  {% if prediction %}
+                  <img src="{{img_path}}" height="50px" width="200px">
+                  <h2> CAPTCHA Text: <i> {{prediction}} </i></h2>
+                  <!-- <h5> Model Used: <i> {{model}} </i></h2> -->
+                  {% endif %}
+              </div>
+              <div class="row h-10">
+                <div class="col-md-12">
+                    <p style="text-align:center"><b>Don't have CAPTCHA data? No worries - <a target="_blank" href="https://hardhat-enterprises.github.io/breaking-captcha/resources/pages/demo.html">Try our demo!</a></b></p>
+                </div>
+            </div>  
+          </div>
+        </div>
+    </header>
+    <footer class="footer py-4 bg-dark text-light"> 
+        <div class="container text-center">
+            <p class="mb-4 small">Copyright <script>document.write(new Date().getFullYear())</script> &copy;HardHat Enterprises - BreakingCAPTCHA</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,57 +1,93 @@
 # Breaking CAPTCHA Project
-## Deakin University Capstone, Trimester 2, 2022
+## Deakin University Capstone, Trimester 3, 2022
 
-Project lead: Cecilia Sammut (ccsammut@deakin.edu.au)
+Team members: 
+| Name                  | Role                  |
+| -----------           | -----------           |
+| Luka Croote           | Project Lead          |
+| NGUYEN NGOC BACH LUU  | Text CAPTCHA R&D           |
+| Jamil Rizkallah       | Audio CAPTCHA R&D           |
+| Fenglu Cai            | Audio CAPTCHA R&D           |
+| Ridwan Ganiyu         | Audio CAPTCHA R&D           |
+| Koshila Dodantenna    | Cloud Engineer           |
+| Pavan Andaneppa Yarlagatti    | Cloud Engineer           |
+| Randeep Kaushal | Cognitive Reasoning Captcha Research           |
+<div style="page-break-after: always;"></div>
 
 ## Project Description
 
-The goal of the Breaking CAPTCHA project is to develop machine learning, AI, and computer vision models to autonomously solve CAPTCHA problems. The final product of the project will be to provide end users with an interface to solve these CAPTCHA problems. This user interface will be the focus of future iterations.
+The goal of the Breaking CAPTCHA project is to develop machine learning, AI, and computer vision models to autonomously solve CAPTCHA problems. The final product of the project will be to provide end users with an interface to solve these CAPTCHA problems. The product will also be a pipeline that Developers can use to collaborate on ML experiments. Both These user interfaces (users and ML developers) will be the focus of future iterations.
 
 Deliverables:
 
--	Infrastructure as code product to enable efficient handover of cloud infrastructure.
 -	Machine learning model that will break Audio CAPTCHAs.
 -	Progressing the development of a nonsegmentation and OCR model that will break text CAPTCHAs.
--	A coherent repository that will transcend trimesters.
 -	A showcase website where our products can be described and promoted for consumers.
+-   Machine Learning pipeline that allows for better collaboration, experimentation as well as CI/CD.
 
 
 ## Team Structure
 
 **Repository Operations/Website development:**
 
-Lead: Agrim Gautum (s221071682@deakin.edu.au)
+Contributers: KOSHILA DODANTENNA (kdodantenna@deakin.edu.au)
 
 - Github Management (structure, maintaining, approving merge requests, etc.)
 - Website Development (design, build, test, prod)
 
 **Cloud Development**
 
-Lead: Jet Spencer Hall (jshal@deakin.edu.au)
+Contributers: Luka Croote (lcroote@deakin.edu.au)
 
-- Cloud Infrastructure (design, build, test)
-- Infrastrucutre as code (develop, test, proceduralise)
+- Machine Learning pipeline
+- Existing GCP improvements
 - Product integration
 
 **Breaking Audio CAPTCHA**
 
-Lead: Luka Croote (lcroote@deakin.edu.au)
+Contributers: RIDWAN GANIYU (rbganiyu@deakin.edu.au), JAMIL RIZKALLAH (jrizkallah@deakin.edu.au), FENGLU CAI (caife@deakin.edu.au)
 
 - Models to break Audio CAPTCHA
 
 **Breaking Text CAPTCHA)**
 
-Lead: Renee Farina (rfarina@deakin.edu.au)
+Contributers: NGUYEN NGOC BACH LUU (nnluu@deakin.edu.au)
 
 - Models to break Text CAPTCHA
 
+**Cognitive reasoning Captcha Research**
+
+Contributers: RANDEEP KAUSHAL (rkausha@deakin.edu.au)
+
+- Cognitive reasoning CAPTCHA research
+
 ## Resource
+
+### Usage
+
+Please refer to the relevant Trimester folder to get the most up to date work. **NOTE** that previous trimester work may still be relevant and only partially continued. Hence when looking for more work to continue please do not limit yourself to only T3 etc. For instance most of the Cloud_Dev work should and can be continued going forward even though it paused largely in T3 in place of a Machine Learning and DevOps Pipeline.
 
 ### History
 
-T2 2022 is the second implementation of the Braking CAPTCHA project in Deakin University's Capstone program. In the inaugral implementation the focus of the project was on building models to improve on current installations. The collection of work that was produced in T1 2022 can be found in the [Project History folder](https://github.com/cyber-panther/breaking-captcha/tree/main/Project_History/Trimester01.
+T3 2022 is the third implementation of the Braking CAPTCHA project in Deakin University's Capstone program. This trimester the focus on model building remains, however we have an additional focus of building infrastrucure and knowledge management solutions that will transcend trimesters and improve the continuity of the Breaking CAPTCHA project in trimesters to come. This is to support the ultimate outcome of developing an interface to solce CAPTCHA's. The collection of work that was produced in T2 2022 can be found in the [Project History folder](https://github.com/Hardhat-Enterprises/breaking-captcha/tree/main/Teams_T2_2022).
 
-This trimester the focus on model building remains, however we have an additional focus of building infrastrucure and knowledge management solutions that will transcend trimesters and improve the continuity of the Breaking CAPTCHA project in trimesters to come. This is to support the ultimate outcome of developing an interface to solce CAPTCHA's.
+T3 builds upon T2 by 
+
+- Developing new Audio CAPTCHA breaking strategies and programs
+- Developing new Text CAPTCHA breaking strategies and programs
+- Developing a Machine Learning pipeline to complement both R&D and existing Cloud infrastructure
+- Research into cognitive reasoning captchas
+
+
+### Work Locations
+
+- Machine Learning Pipeline
+    - Cloud_Dev/pipeline-framework
+- Audio CAPTCHA
+    - Audio_CAPTCHA/...
+- Text CAPTCHA
+    - Text_CAPTCHA/...
+
 
 ## Operating GitHub (Pull requests)
 
@@ -72,8 +108,6 @@ On the web version of GitHub, you simply have to select the branch you want to w
 For a step-by-step guide on how to operate GitHub, you can click on this link: <https://www.youtube.com/watch?v=RGOj5yH7evk>. The link provides a good foundation on understanding not only GitHub but also Git.
 
 ### GitHub Admin
-
-You can contact the Agrim Gautum (s221071682@deakin.edu.au) OR Cecilia Sammut (ccsammut@deakin.edu.au) for help with this repo.
 
 This documentation will be updated constantly so keep an eye out!!
 
