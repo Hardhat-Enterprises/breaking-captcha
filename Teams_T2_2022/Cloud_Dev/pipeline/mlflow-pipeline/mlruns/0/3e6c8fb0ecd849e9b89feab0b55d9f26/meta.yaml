@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/lukacroote/Desktop/uni/project%202/development/breaking-captcha/Teams_T2_2022/Cloud_Dev/pipeline/mlflow-pipeline/mlruns/0/3e6c8fb0ecd849e9b89feab0b55d9f26/artifacts
+end_time: 1669622441736
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3e6c8fb0ecd849e9b89feab0b55d9f26
+run_name: amazing-cat-733
+run_uuid: 3e6c8fb0ecd849e9b89feab0b55d9f26
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1669622441728
+status: 3
+tags: []
+user_id: lukacroote
