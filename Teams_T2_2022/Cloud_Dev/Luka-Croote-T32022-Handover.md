@@ -4,7 +4,7 @@ This document outlines necessary handover information for the Cloud engineering 
 
 # Key Locations
 
-- Work folder [INSERT HERE](insert link here)
+- Work folder [pipeline-framework](https://github.com/Hardhat-Enterprises/breaking-captcha/tree/Cloud_Dev/Teams_T2_2022/Cloud_Dev/pipeline-framework)
 
 ## Trimester Focus
 
