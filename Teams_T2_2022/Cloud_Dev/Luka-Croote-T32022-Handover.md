@@ -28,4 +28,3 @@ The team delivered a program which could be run locally or on a remote vm which 
 Contributers:
 
     - Luka Croote lcroote@deakin.edu.au
-    - Pavan Andaneppa Yarlagatti s222182445@deakin.edu.au

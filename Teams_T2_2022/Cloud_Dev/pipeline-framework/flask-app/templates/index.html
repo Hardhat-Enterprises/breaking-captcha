@@ -35,24 +35,30 @@
                         </div>
                     </form> 
                 </div>
-                <!-- <div class="col-md-6 d-none d-md-block">
-                    <form class="header-form" action="/submit_audio" method="POST" enctype="multipart/form-data">
-                        <div class="head">Upload Audio here</div>
+                <div class="col-md-6 d-none d-md-block">
+                    <form class="header-form" action="/" method="" enctype="multipart/form-data">
+                        <div class="head">Model Information</div>
                         <div class="body">
                             <div class="form-group">
-                                <input type="file" class="form-control"  name="audio_file" id="audio_file" accept=".mp3, .mp4, .wav, .wma, .aac, .flac, .m4a" required>
+                                {% if prediction %}
+                                <h5 style="color:#33475b">Model Name: <i> {{model.name}} </i></h5> <br>
+                                <h5 style="color:#33475b">Model Version: <i> {{model.version}} </i></h5> <br>
+                                <h5 style="color:#33475b">Model Stage: <i> {{model.current_stage}} </i></h5> <br>
+                                <h5 style="color:#33475b">Last Updated: <i> {{model.last_updated_timestamp}} </i></h5> <br>                                
+                                {% endif %}
+                                <!-- <input type="file" class="form-control"  name="audio_file" id="audio_file" accept=".mp3, .mp4, .wav, .wma, .aac, .flac, .m4a" required> -->
                             </div>
                         </div>
                         <div class="footer">
-                            <button class="btn btn-info btn-block" type="submit" name="submit_audio">Submit</button>
+                            <!-- <button class="btn btn-info btn-block" type="submit" name="submit_audio">Submit</button> -->
                         </div>
                     </form> 
-                </div> -->
+                </div>
                 <div class="prediction_model">
                   {% if prediction %}
                   <img src="{{img_path}}" height="50px" width="200px">
                   <h2> CAPTCHA Text: <i> {{prediction}} </i></h2>
-                  <h5> Model Used: <i> {{model}} </i></h2>
+                  <!-- <h5> Model Used: <i> {{model}} </i></h2> -->
                   {% endif %}
               </div>
               <div class="row h-10">

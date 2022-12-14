@@ -10,12 +10,22 @@ The pipeline is built largely around an MLflow experiment tracking and model sto
 
 The infrastructure is designed to be run on any machine, locally or remotely. This does not rely on dedicated databasing or S3 services, each of these is created in the root directory on the machine. For Example, if run on `GCP` virtual machine in the project directory there will be the local storage for `s3 buckets` as well as `sqlite database` items.   
 
+## Resources
+
+In this project there are 3 main pieces of work
+
+- Machine learning pipeline
+- Testing and logging program for mlflow `/testing`
+- flask app which demonstrates an improved `text-captcha` model `/flask-app`
+
+
 # System Requirements
 
 ```
 unix
 python
 conda
+brew
 ```
 
 ## MlFlow (minion, sqlite)
@@ -23,7 +33,7 @@ conda
 ```
 # unix/linux
 # 1. Setup
-conda env create -f conda_env.yaml
+conda env create -f conda_env.yaml # provided in git
 
 # 2. Activate
 conda activate mlflow-env3
@@ -85,12 +95,29 @@ mlflow models serve -m "models:/text-captcha/Production" --env-manager "local" -
 To run the flask demo app locally use the below steps. In summary this launches `mlflow` server which uses `sqlite` for metadata and `minio` for artifact storage. The App is a flask app that queries the deployed model endpoint. 
 
 ```
+# 0. Create environment variables
+export MINIO_ROOT_USER=breaking_captcha_admin
+export MINIO_ROOT_PASSWORD=breaking_captcha
+export MLFLOW_S3_ENDPOINT_URL=http://127.0.0.1:9000
+export AWS_ACCESS_KEY_ID=breaking_captcha_admin
+export AWS_SECRET_ACCESS_KEY=breaking_captcha
+
 # 1. Start minio server (see above)
+minio server minio_data --console-address ":9001"
+
 # 2. Start Mlflow server (see above)
+mlflow server  --port 8000 \
+    --backend-store-uri sqlite:///./database/mlflow.db \
+    --default-artifact-root s3://breaking-captcha \
+    --host 0.0.0.0
 # 3. Deploy Registered Model (see above)
+mlflow models serve -m "models:/text-captcha/Production" --env-manager "local" -p 8888
+
 # 4. Run Flask app
 cd flask-app
+pip install -r requirements.txt # This may not work the same on every system
 python app.py
+
 # 5. Go to port for localhost
 ```
 
@@ -113,6 +140,16 @@ Update a new model version to Production and see this reflected in demo site. Th
 # error: [WARNING] Worker with pid 71 was terminated due to signal 9
 # Restart all servers and boot up flask app second, this coulod be some kind of memory issue
 # TODO limit memory allocation for different servers (?)
+
+# Flask app or trainer.py not working
+# this may be due to missing pip libraries, this is not solved in depth in this readme because it varies from os to os. 
+# This was developed on a MAC with M1 Chip which is why Conda is being used
+# Linux systems maybe simpler
+
+# If the program isnt working for unexplained reasons it may be due to environment variables not existing in the shell or terminal you run your programs from
+
+# Sometimes the server reports no boto3 package. Just rerun pip install boto3
+
 ```
 
 # Future trimester work
@@ -123,7 +160,7 @@ Current Production Models are deployed and used the demo site. This should in th
 
 ### **TODO** Continous Deployment based on newer model versions improving on metrics
 
-This would require using Git or Jenkins to automate the updating of a new Model to `Stage=Production` based on the correct metrics being used.
+This would require using Git or Jenkins to automate the updating of a new Model to `Stage=Production` based on the correct metrics being used. Current CD is continuous delivery due to changes flowing through when user accepts a new version to Production.
 
 ### **TODO** Deploy pipeline to production environment (GCP)
 
@@ -136,3 +173,7 @@ Encourage uptake so that teams working on models can collaborate correctly.
 ### **TODO** Deploy new flask app using prediction endpoint
 
 The existing demo site is not fit for purpose of using the pipeline. The current demo site needs to be replaced with an upgrade version similar to that provide in this directory in `flask-app`.
+
+### **TODO** Containerise solution 
+
+Current solution has some operational risk depending on system and user. A containerised solution should be able to pboot up with 1 command.
