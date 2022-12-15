@@ -1,8 +1,5 @@
 # MLFlow Pipeline Framework
 
-<<<<<<< HEAD
-# Overview
-=======
 # Summary
 
 The deliverable of this working group is a Machine Learning pipeline which;
@@ -18,7 +15,6 @@ site as they are developed. Furthermore, this work can be continued to include m
 significantly increasing the amount of technical dept.
 
 # Technical Overview
->>>>>>> 1c9a8283e759c31d1f198cb364363b54e666252e
 
 The pipeline is built largely around an MLflow experiment tracking and model store framework using 
 
