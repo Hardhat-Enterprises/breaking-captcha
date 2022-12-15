@@ -1,0 +1,67 @@
+apiVersion: serving.knative.dev/v1
+kind: Revision
+metadata:
+  name: flask-docker-00025-weg
+  namespace: '583315545508'
+  selfLink: /apis/serving.knative.dev/v1/namespaces/583315545508/revisions/flask-docker-00025-weg
+  uid: ed93cb1f-3f8c-4d7c-8c55-40e4a07eb065
+  resourceVersion: AAXpO1ZBEhw
+  generation: 1
+  creationTimestamp: '2022-09-22T03:04:43.381664Z'
+  labels:
+    serving.knative.dev/route: flask-docker
+    serving.knative.dev/configuration: flask-docker
+    serving.knative.dev/configurationGeneration: '25'
+    serving.knative.dev/service: flask-docker
+    serving.knative.dev/serviceUid: 5ac00aa1-3490-468f-95c0-a1018c9fd821
+    cloud.googleapis.com/location: us-central1
+  annotations:
+    run.googleapis.com/client-name: cloud-console
+    serving.knative.dev/creator: jshal@deakin.edu.au
+    autoscaling.knative.dev/minScale: '1'
+    run.googleapis.com/execution-environment: gen1
+    autoscaling.knative.dev/maxScale: '10'
+    run.googleapis.com/cpu-throttling: 'true'
+    run.googleapis.com/startup-cpu-boost: 'true'
+  ownerReferences:
+  - kind: Configuration
+    name: flask-docker
+    uid: b3733984-af34-4379-8297-08d745f29cfa
+    apiVersion: serving.knative.dev/v1
+    controller: true
+    blockOwnerDeletion: true
+spec:
+  containerConcurrency: 80
+  timeoutSeconds: 3600
+  serviceAccountName: 583315545508-compute@developer.gserviceaccount.com
+  containers:
+  - name: flask_docker-1
+    image: gcr.io/sit-22t2-breaking-capt-8718903/flask_docker@sha256:bf7223e920c7ea6c4a9a2046ff536ee5d8ef2915bf00d482ec81a06ded66c7f5
+    ports:
+    - name: http1
+      containerPort: 8080
+    resources:
+      limits:
+        cpu: 4000m
+        memory: 4Gi
+status:
+  observedGeneration: 1
+  conditions:
+  - type: Ready
+    status: 'True'
+    lastTransitionTime: '2022-09-22T03:05:37.202780Z'
+  - type: Active
+    status: 'True'
+    lastTransitionTime: '2022-09-22T03:05:43.004954Z'
+    severity: Info
+  - type: ContainerHealthy
+    status: 'True'
+    lastTransitionTime: '2022-09-22T03:05:37.202780Z'
+  - type: MinInstancesProvisioned
+    status: 'True'
+    lastTransitionTime: '2022-09-22T03:04:51.365268Z'
+  - type: ResourcesAvailable
+    status: 'True'
+    lastTransitionTime: '2022-09-22T03:04:51.365268Z'
+  logUrl: https://console.cloud.google.com/logs/viewer?project=sit-22t2-breaking-capt-8718903&resource=cloud_run_revision/service_name/flask-docker/revision_name/flask-docker-00025-weg&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22flask-docker%22%0Aresource.labels.revision_name%3D%22flask-docker-00025-weg%22
+  imageDigest: gcr.io/sit-22t2-breaking-capt-8718903/flask_docker@sha256:bf7223e920c7ea6c4a9a2046ff536ee5d8ef2915bf00d482ec81a06ded66c7f5

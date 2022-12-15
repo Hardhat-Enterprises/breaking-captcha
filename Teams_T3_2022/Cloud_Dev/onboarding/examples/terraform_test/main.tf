@@ -13,11 +13,7 @@ provider "google" {
 }
 
 resource "google_storage_bucket" "test-bucket" {
-<<<<<<< HEAD
-  name          = "jets_test_bucket"
-=======
   name          = "test_bucket"
->>>>>>> T3handover
   location      = "US"
   force_destroy = true
 }
