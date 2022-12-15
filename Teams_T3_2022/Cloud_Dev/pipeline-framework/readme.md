@@ -115,6 +115,7 @@ export MINIO_ROOT_PASSWORD=breaking_captcha
 export MLFLOW_S3_ENDPOINT_URL=http://127.0.0.1:9000
 export AWS_ACCESS_KEY_ID=breaking_captcha_admin
 export AWS_SECRET_ACCESS_KEY=breaking_captcha
+export MLFLOW_TRACKING_URI=http://localhost:8000
 
 # 1. Start minio server (see above)
 minio server minio_data --console-address ":9001"
@@ -124,6 +125,7 @@ mlflow server  --port 8000 \
     --backend-store-uri sqlite:///./database/mlflow.db \
     --default-artifact-root s3://breaking-captcha \
     --host 0.0.0.0
+
 # 3. Deploy Registered Model (see above)
 mlflow models serve -m "models:/text-captcha/Production" --env-manager "local" -p 8888
 
@@ -134,6 +136,8 @@ python app.py
 
 # 5. Go to port for localhost
 ```
+
+**NOTE** For each of the 4 services (minio, mlflow, deployed model, flask app) you need a new terminal and the environment variables existing in that environment.
 
 ## Testing Continuous delivery
 
@@ -205,6 +209,68 @@ mlflow server  --port 8000 \
 
 # View UI at http://YOUR-VM-IP-ADDRESS:8000
 ```
+
+## Running on Remote VM (linux implementation of Mlflow (minio + sqlite + mlflow))
+
+The below instructions are as done in a Azure VM.
+
+
+```
+# ssh into VM
+ssh -i breaking-captcha_key.pem luka@4.197.13.248
+
+# configure network to listen on ports 9000, 9001, 8000
+# This can be done in cloud provider [see here](https://learn.microsoft.com/en-us/azure/application-gateway/quick-create-portal)
+
+# download and intall miniconda
+wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
+conda init
+
+# close and reopen VM
+
+# Download git
+sudo-apt get git
+# clone repo
+git clone https://github.com/Hardhat-Enterprises/breaking-captcha.git
+
+# cd into correct directory
+cd breaking-captcha/Teams_T3_2022/Cloud_Dev/pipeline-framework/
+
+# remove mac os specific details from conda_env.yaml (change to just installing tensorflow)
+vim conda_env.yaml # make change
+
+# create environment
+conda env create -f conda_env.yaml
+conda activate mlflow-env3
+
+# Download minio
+wget https://dl.minio.io/server/minio/release/linux-amd64/minio
+chmod +x minio
+
+# Setup environment variables
+export MINIO_ROOT_USER=breaking_captcha_admin
+export MINIO_ROOT_PASSWORD=breaking_captcha
+export MLFLOW_S3_ENDPOINT_URL=http://127.0.0.1:9000
+export AWS_ACCESS_KEY_ID=breaking_captcha_admin
+export AWS_SECRET_ACCESS_KEY=breaking_captcha
+
+# run minio server
+mkdir minio_data
+./minio server minio_data --console-address ":9001"
+
+# make sqlite db
+mkdir database
+
+# run mlflow server
+mlflow server  --port 8000 \
+    --backend-store-uri sqlite:///./database/mlflow.db \
+    --default-artifact-root s3://breaking-captcha \
+    --host 0.0.0.0
+
+# View UI at http://YOUR-VM-IP-ADDRESS:8000
+```
+
 
 ## Debugging Notes
 

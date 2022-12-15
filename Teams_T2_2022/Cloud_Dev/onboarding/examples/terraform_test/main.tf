@@ -13,7 +13,15 @@ provider "google" {
 }
 
 resource "google_storage_bucket" "test-bucket" {
+<<<<<<< HEAD
+<<<<<<< HEAD
+  name          = "jets_test_bucket"
+=======
   name          = "test_bucket"
+>>>>>>> T3handover
+=======
+  name          = "test_bucket"
+>>>>>>> 1c9a8283e759c31d1f198cb364363b54e666252e
   location      = "US"
   force_destroy = true
 }
