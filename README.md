@@ -110,5 +110,3 @@ For a step-by-step guide on how to operate GitHub, you can click on this link: <
 ### GitHub Admin
 
 This documentation will be updated constantly so keep an eye out!!
-
-Last edited: 11:58 pm, 27 July 2022 (AEST)
