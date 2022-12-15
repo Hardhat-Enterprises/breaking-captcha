@@ -14,20 +14,20 @@ From the above progress, our team proposes development plan as below:
 
 **Application development**
 
-Implement comprehensive training phases with complex dataset (complex background/text font, color image) 
+- Implement comprehensive training phases with complex dataset (complex background/text font, color image) 
 
-Complete image processing module for all raw image input 
+- Complete image processing module for all raw image input 
 
-Develop an application to break input image CAPTCHA from end-user 
+- Develop an application to break input image CAPTCHA from end-user 
 
-Integrate to company pipeline 
+- Integrate to company pipeline 
 
 **R&D tasks:**
 
-Transfer learning research 
+- Transfer learning research 
 
-Develop model to extract hand-writing data from different languages (requires more dataset) 
+- Develop model to extract hand-writing data from different languages (requires more dataset) 
 
-R&D phase for object detection for image CAPTCHA 
+- R&D phase for object detection for image CAPTCHA 
 
-Further research and development for new approach in computer vision field 
+- Further research and development for new approach in computer vision field 
