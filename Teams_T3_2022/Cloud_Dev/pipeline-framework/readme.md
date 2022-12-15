@@ -1,6 +1,20 @@
 # MLFlow Pipeline Framework
 
-# Overview
+# Summary
+
+The deliverable of this working group is a Machine Learning pipeline which;
+
+- Allows ML experimentation testing and tracking
+- Centralised collaboration
+- storing models in model registry
+- Continuous delivery using model registry and deployed models
+
+This pipeline exists to improve the collaboration between R&D developers as well as provide a mechanism for the demo site to be
+better maintained and improved. This will allow future cohorts to continue experimenting but be able to update the models serving the demo
+site as they are developed. Furthermore, this work can be continued to include more sophisticated staging and production environments without
+significantly increasing the amount of technical dept.
+
+# Technical Overview
 
 The pipeline is built largely around an MLflow experiment tracking and model store framework using 
 
