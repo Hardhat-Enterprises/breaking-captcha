@@ -1,11 +1,7 @@
 Teams_T2_2022/Audio_CAPTCHA/*
 Teams_T3_2022/Audio_CAPTCHA/.env
-<<<<<<< HEAD
 Teams_T3_2022/Audio_CAPTCHA/captcha-solver
 Teams_T3_2022/Audio_CAPTCHA/r-and-d
-=======
-Teams_T3_2022/Audio_CAPTCHA/*
->>>>>>> 1c9a8283e759c31d1f198cb364363b54e666252e
 .DS_Store
 .idea/
 .vscode/
