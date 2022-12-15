@@ -12,8 +12,8 @@ dependencies:
 
   ## PyPI packages
   - pip:
-    - tensorflow-macos
-    - tensorflow-metal  ## optional, but recommended
+    - tensorflow-macos==2.9
+    - tensorflow-metal==0.5.0  ## optional, but recommended
     - opencv-python
     - numpy
     - pandas
