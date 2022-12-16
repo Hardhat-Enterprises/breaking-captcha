@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>BreakingCAPTCHA</title>
+  
+    <link rel="stylesheet" href="assets/icons/icons.css">
+	<link rel="stylesheet" href="assets/css/bc.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<header class="main_header">
+		<div class="container">
+			<div class="header_row">
+				<div class="header_logo">
+					<a href="/">
+						<img src="assets/imgs/bc.png" alt="Italian Trulli">
+					</a>
+				</div>
+				<div class="header_nav">
+					<nav class="navbar navbar-inverse">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<div class="collapse navbar-collapse" id="myNavbar">
+							<ul class="nav navbar-nav">
+								<li><a href="https://hardhat-enterprises.github.io/breaking-captcha/index.html"  target="_blank">Home</a></li>
+								<li><a href="https://hardhat-enterprises.github.io/breaking-captcha/resources/pages/demo.html"  target="_blank">Demo</a></li>
+								<li><a href="https://hardhat-enterprises.github.io/breaking-captcha/resources/pages/timeline.html"  target="_blank">About</a></li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section class="banner_sec">
+		<div class="container">
+			<div class="banner_content">
+				<h2>Breaking captcha</h2>
+				<p>Image classification model</p>
+				<span class="subheading" style="color:white; font-size:25px">A HardHat Enterprises Project</span>
+			</div>
+		</div>
+		<div class="down_arrow">
+			<a href="#upload">
+				<img src="assets/imgs/down-arrow.png" alt="">
+			</a>
+		</div>
+	</section>
+	<section id="upload" class="upload_sec">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<form class="header-form" action="/submit" method="POST" enctype="multipart/form-data">
+						<div class="head">Upload Image here</div>
+						<div class="body">
+							<div class="form-group">
+								<input type="file" class="form-control" name="image_file" id="image_file" accept=".jpg, .jpeg, .png">
+							</div>
+						</div>
+						<div class="footer">
+							<button class="btn btn-info btn-block" type="submit" name="submit">Submit</button>
+						</div>
+					</form>
+				</div>
+				<div class="col-md-6">
+					<form class="header-form" action="/submit" method="POST" enctype="multipart/form-data">
+						<div class="head">Upload Audio here</div>
+						<div class="body">
+							<div class="form-group">
+								<input type="file" class="form-control" name="audio_file" id="audio_file"
+									accept=".mp3, .mp4, .wav, .wma, .aac, .flac, .m4a">
+							</div>
+						</div>
+						<div class="footer">
+							<button class="btn btn-info btn-block" type="submit" name="submit">Submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="prediction_model">
+				<!-- <img src="assets/imgs/yd755.png" width="200px" height="50px">
+				<h2> CAPTCHA Text: <i> yd755 </i></h2> -->
+				<!-- <img src="assets/imgs/audio_file.png" width="200px" height="50px">
+				<h2> CAPTCHA Text: <i> c j u g j </i></h2> -->
+			</div>
+			<div class="upload_note">
+				<p>Don't have CAPTCHA data? No worries - <a target="_blank" href="https://hardhat-enterprises.github.io/breaking-captcha/resources/pages/demo.html">Try our demo!</a></p>
+			</div>
+		</div>
+	</section>
+    <!-- <header class="header d-flex justify-content-center">
+        <div class="container">
+            <div class="row h-50 align-items-center">
+                <div class="col-md-7 col-sm-4 col-xs-12">
+                    <div class="header-content">
+                        <h3 class="header-title"><strong class="text-primary">BREAKING</strong><span style="color: white; font-weight:bold">CAPTCHA</span></h3>
+                        <h4 class="header-subtitle">Image Classification Model </h4>
+                    </div>  
+                </div>
+                
+                <div class="col-md-5 col-sm-4 col-xs-12 " class="logo">
+                    <img src="assets/imgs/bc.png" alt="Italian Trulli">
+                </div>
+                
+            </div>  
+            <div class="row h-30">
+                <div class="col-md-6 col-sm-6 col-xs-12 d-none d-md-block">
+                    <form class="header-form" action="/submit" method="POST" enctype="multipart/form-data">
+                        <div class="head">Upload Image here</div>
+                        <div class="body">
+                            <div class="form-group">
+                                <input type="file" class="form-control"  name="image_file" id="image_file" accept=".jpg, .jpeg, .png">
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <button class="btn btn-info btn-block" type="submit" name="submit">Submit</button>
+                        </div>
+                    </form> 
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12 d-none d-md-block">
+                    <form class="header-form" action="/submit" method="POST" enctype="multipart/form-data">
+                        <div class="head">Upload Audio here</div>
+                        <div class="body">
+                            <div class="form-group">
+                                <input type="file" class="form-control"  name="audio_file" id="audio_file" accept=".mp3, .mp4, .wav, .wma, .aac, .flac, .m4a">
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <button class="btn btn-info btn-block" type="submit" name="submit">Submit</button>
+                        </div>
+                    </form> 
+                    
+                </div>
+            </div> 
+            <div class="row h-10">
+                <br><br><br><br>
+            </div>
+            <div class="row h-10">
+                <div class="col-md-12">
+                    <p style="text-align:center"><b>Don't have CAPTCHA data? No worries - <a target="_blank" href="https://hardhat-enterprises.github.io/breaking-captcha/resources/pages/demo.html">Try our demo!</a></b></p>
+                </div>
+            </div>  
+        </div>
+    </header>   -->
+
+    <footer class="main_footer">
+        <div class="container">
+					<div class="copy_right">
+            <p>Copyright <script>document.write(new Date().getFullYear())</script> &copy;HardHat Enterprises - BreakingCAPTCHA</p>
+					</div>
+        </div>
+    </footer>
+
+</body>
+</html>
