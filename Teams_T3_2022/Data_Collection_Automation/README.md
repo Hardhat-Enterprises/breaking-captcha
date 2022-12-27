@@ -58,7 +58,7 @@ Therefore, we can restart downloading task simply by designating the next desira
 In essence, this tool was designed to mimic human-being click the mouse and hit the keyboard, by which I mean any such action follows a random sleep time like humans have. Since botdetect website seems to have no detection for automating tools, time interval between actions can be very short. The sleep time between each action observes a uniform distribution.
 
 
-How to change it?
+How to adjust mouse clicks and keyboard hits time intervals?
 
 Sleep_decorator_short() is for speed control of the botdetect CAPTCHA download automation.
 You can find the function in data_collection/__init__.py. 
@@ -68,8 +68,42 @@ Note: data_collection/google_recaptcha_helper.py is to download audio CAPTCHAs f
 1. How to extend to include another source. 
 Apart from the botdetect website, the google reCAPTCHA website demonstrates how to extend the automation tool to include more downloading resources. The tool uses Object Oriented Programming(OOP) for easier maintainability. Please refer to the class UML in github.
 
+2. Attempts made to bypass google's automated query detection.
 
-2. How to increase more randomness in this automation tool 
+  a. increase more randomness in this automation tool 
 Unlike the botdetect downloading, which uses selenium to find webpage elements, it uses pyautogui which can indicate the coordinates on screen you want to click. This means that you are able to hit mouse in random coordinates around an interested area (when humans click the mouse, not only the time interval between actions are random, each time they click on the same element, they normally do not click on the same coordinate),  which could be helpful when the automation detection level of a particular source is not very high. 
+  b. use third party software for a range of options, such as proxy, disable blink features 
+  https://github.com/soumilshah1995/Preventing-Selenium-from-being-detected
+  
+
+  opts = Options()
+user_agent = 'Mozilla/5.0 CK={} (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko'
+
+webdriver.DesiredCapabilities.CHROME['proxy'] = {
+    "httpProxy": PROXY,
+    "ftpProxy": PROXY,
+    "sslProxy": PROXY,
+    "proxyType": "MANUAL",
+
+}
+
+webdriver.DesiredCapabilities.CHROME['acceptSslCerts'] = True
+
+opts.add_argument("user-agent=" + user_agent)
+opts.add_argument('--disable-dev-shm-usage')
+opts.add_argument("--incognito")
+opts.add_argument('--disable-blink-features=AutomationControlled')
+opts.add_argument('--disable-blink-features=AutomationControlled')
+opts.add_experimental_option('useAutomationExtension', False)
+opts.add_experimental_option("excludeSwitches", ["enable-automation"])
+opts.add_argument("disable-infobars")
+  
+  c. selenium stealth
+  this tool helps to prevent detection
 
 
+## Next step
+Since google reCAPTCHA website has implemented automated query detection. We can explore other methods in the reference totest if we can bypass it. 
+
+## References:
+https://stackoverflow.com/questions/68895582/how-to-avoid-a-bot-detection-and-scrape-a-website-using-python
