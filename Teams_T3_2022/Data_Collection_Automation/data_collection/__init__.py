@@ -19,6 +19,7 @@ def get_btn_by_id(driver, id):
     return WebDriverWait(driver, timeout=20).until(
         EC.element_to_be_clickable((By.ID, id)))
 
+# this decorator is for google reCAPTCHA website operations
 def sleep_decorator(original_function):
     def wrapper_function(*args, **kwargs):
         # always sleep a random second before action
@@ -28,7 +29,7 @@ def sleep_decorator(original_function):
         return result
     return wrapper_function
 
-
+# this decorator is for botdetect website operations
 def sleep_decorator_short(original_function):
     def wrapper_function(*args, **kwargs):
         # always sleep a random second before action
@@ -39,11 +40,13 @@ def sleep_decorator_short(original_function):
 
     return wrapper_function
 
+# add a random sleep time before each operation
 press_key = sleep_decorator(pyautogui.press)
 mouse_move_to = sleep_decorator(pyautogui.moveTo)
 mouse_click = sleep_decorator(pyautogui.click)
 write_filename = sleep_decorator(pyautogui.write)
 
+# add a random sleep time before each operation
 press_key_short = sleep_decorator_short(pyautogui.press)
 mouse_move_to_short = sleep_decorator_short(pyautogui.moveTo)
 mouse_click_short = sleep_decorator_short(pyautogui.click)
@@ -71,7 +74,7 @@ class Download_operation(ABC):
         write_filename(str(fname), interval=0.25)
         press_key('enter')
 
-
+    # this is a template for how to download:find the download element,right click it, select from the context menu to download
     def download(self,fname):
         self.locate_right_click()
         self.select_from_context_menu()

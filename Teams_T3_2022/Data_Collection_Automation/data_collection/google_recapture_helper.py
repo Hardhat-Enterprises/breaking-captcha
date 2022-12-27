@@ -11,7 +11,7 @@ def random_position_from_range(x_range, y_range):
     return x, y
 
 
-
+# the following coordinates represent element areas [(upper_left_x,upper_left_y),(lower_right_x, lower_right_y)] 
 class State:
     btns_first_state = [[(89, 294), (414, 475)], [(200, 220), (662, 687)]]
     btns_normal_state = [[(152,170),(546,560)]]
@@ -28,7 +28,7 @@ class State:
         # click button
             mouse_click(button=button)
 
-
+# each time, when start downloading, url is used
 class FirstState(State):
 
     def prompt_download_context(self):
@@ -36,14 +36,14 @@ class FirstState(State):
         self.btn_click(self.btns_first_state, 'left')
         self.btn_click(self.btn_audio,'right')
 
-
+# each time, when a page has opened, url is not used, press refresh to continue downloading the next audio file
 class NormalState(State):
     def prompt_download_context(self):
         self.btn_click(self.btns_normal_state,'left')
         self.btn_click(self.btn_audio, 'right')
 
 
-
+# pyautogui is used instead of selenium's find_element method
 class LocateByPositionStrategy(MenuLocateStrategy):
     def __init__(self):
         super().__init__()
