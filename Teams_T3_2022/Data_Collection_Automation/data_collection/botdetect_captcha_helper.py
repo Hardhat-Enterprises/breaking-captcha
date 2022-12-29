@@ -10,7 +10,7 @@ minCode = 'minCodeLength'
 maxCode = 'maxCodeLength'
 applyBtn = 'applyButton'
 
-
+#find element on webpage
 class LocateByIdStrategy(MenuLocateStrategy):
     def __init__(self,driver, id):
         self.driver = driver
@@ -21,13 +21,14 @@ class LocateByIdStrategy(MenuLocateStrategy):
         element = get_btn_by_id(self.driver, self.id)
         self.action.context_click(element).perform()
 
-
+#keyboard operations
 class BotdetectAudioDownload(Download_operation):
     def select_from_context_menu(self):
         for i in range(5):
             press_key_short('down')
         press_key_short('enter')
 
+#keyboard operations
 class BotdetectPictureDownload(Download_operation):
     def select_from_context_menu(self):
         press_key_short('down')
