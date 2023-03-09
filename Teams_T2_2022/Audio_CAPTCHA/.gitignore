@@ -1,0 +1,15 @@
+data/*
+.DS_Store
+.idea
+.Rhistory
+.idea/*
+.env
+*.wav
+*.mp3
+*.mp4
+captcha-solver/models/*
+*/pretrained_models/*
+*/models/*
+*.pickle
+*/fine_tune*/*
+*.zip
