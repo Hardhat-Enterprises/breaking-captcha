@@ -1,23 +1,32 @@
-import cv2 
+import cv2  as cv
 import numpy as np 
 import glob
 from scipy import misc
 import matplotlib.pyplot as plt
 
 
-path = glob.glob("enter_folder_or_path_here") #storing the location of all the images in variable path
-outpath = ("enter_folder_orpath_here")
-#imgs = [] #creating an empty list
+folder_dir = ' ' #storing the location of all the images in variable path
 
-image_no = 1
-for img in path: #running a loop to iterate through every image in the file
-    pic = cv2.imread(img) #reading the image using matplotlib
-    gray_pic = cv2.cvtColor(pic, cv2.COLOR_BGR2GRAY) #converting the image into grayscale
-    r, threshold = cv2.threshold(gray_pic, 110, 255, cv2.THRESH_OTSU) #converting the image into grayscale using the histogram method
-    
-    # need add de-noise element from exploration python file.
-    
 
-    ## This will write out code to a new folder on the local host - may need remove
-    cv2.imwrite(outpath + str(image_no) + '.jpg', threshold) # write to the test_pImg folder 
-    image_no +=1 
+for images in glob.iglob(f'{folder_dir}/*'):
+    
+    pic = cv.imread(images)
+    
+    #convert to gray scale
+    gray_pic = cv.cvtColor(pic, cv.COLOR_BGR2GRAY)
+    
+    # setting binary threshold
+    ret,thresh1 = cv.threshold(gray_pic,175,255,cv.THRESH_BINARY)
+    # inverting  - this will need to have a pixel test to make sure that each image is on a
+    # white background with black text to make more readable
+    ret,thresh2 = cv.threshold(gray_pic,140,255,cv.THRESH_BINARY_INV)
+    
+    
+    titles = ['Original Image','Gray','BINARY','BINARY_INV']
+    images = [pic, gray_pic, thresh1, thresh2]
+    for i in range(4):
+        plt.subplot(2,2,i+1),plt.imshow(images[i],'gray',vmin=0,vmax=255)
+        plt.title(titles[i])
+        plt.xticks([]),plt.yticks([])
+        print(" ")
+    plt.show()
